@@ -1,0 +1,57 @@
+body, html {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  background-color: rgb(200, 159, 159);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* header +  nav bar */
+
+header {
+  background-color: rgb(29, 29, 29);
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.8rem;
+}
+
+header .logo {
+  display: inline-block;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+.nav-list {
+  display: inline-flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0rem 2rem;
+}
+
+.nav-link {
+  padding: 1rem;
+}
+
+/* main */
+
+main {
+  padding: 1rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+main img {
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  float: right;
+}
