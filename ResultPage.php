@@ -28,18 +28,18 @@ $arrival = $_POST['arrival'];
     echo $planets[$arrival]["name"];
     ?>
     <?php
-    $dist = PlanetDistance(
+    $dist = round(PlanetDistance(
       $planets[$departure]["x"],
       $planets[$departure]["y"],
       $planets[$departure]["z"],
       $planets[$arrival]["x"],
       $planets[$arrival]["y"],
       $planets[$arrival]["z"]
-    );
-    $time = $dist * $ships[$ship]['speed'];
+    ), 2);
+    $time = round($dist * $ships[$ship]['speed'], 2);
 
-    echo "<h3>Travel Distance: </h3><p>$dist</p>";
-    echo "<h3>Travel Time: </h3><p>$time</p>";
+    echo "<h3>Travel Distance: </h3><p>$dist AU.</p>";
+    echo "<h3>Travel Time: </h3><p>$time days.</p>";
     ?>
   </main>
 </body>
