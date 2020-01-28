@@ -9,21 +9,21 @@
 </head>
 <body>
   <header>
-  <a class="logo" href="index.php">Zachary Olpin</a>
+  <a class="logo" href="/index.php">Zachary Olpin</a>
     <nav>
       <ul class="nav-list">
-        <li class="nav-link"><a href="pages/assignments/a1.php">A1</a></li>
-        <li class="nav-link"><a href="pages/assignments/a2.php">A2</a></li>
-        <li class="nav-link"><a href="pages/assignments/a3.php">A3</a></li>
-        <li class="nav-link"><a href="pages/assignments/shop.php">Shop</a></li>
-        <li class="nav-link"><a href="exercises/exercises.php">Exercises</a></li>
+        <li class="nav-link"><a href="/pages/assignments/a1.php">A1</a></li>
+        <li class="nav-link"><a href="/pages/assignments/a2.php">A2</a></li>
+        <li class="nav-link"><a href="/pages/assignments/a3.php">A3</a></li>
+        <li class="nav-link"><a href="/pages/assignments/shop.php">Shop</a></li>
+        <li class="nav-link"><a href="/pages/exercises/exercises.php">Exercises</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <h2>About</h2>
     <hr>
-    <img src="assets/imgs/me.jpg" alt="Portrait of the author" width="250px" />
+    <img src="/assets/imgs/me.jpg" alt="Portrait of the author" width="250px" />
     <p>
       Hi! I'm Zachary. I'm a first-semester student in the CSIS program at Salt Lake Community College.
       I also have a degree in Psychology from the University of Utah.
