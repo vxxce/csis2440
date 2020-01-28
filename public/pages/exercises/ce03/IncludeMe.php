@@ -1,6 +1,6 @@
 <?php
 
-// function to print distance 
+// calculates distance between planets
 function PlanetDistance($x1, $y1, $z1, $x2, $y2, $z2)
 {
   $dist = sqrt(pow($x2 - $x1, 2) + pow($y2 - $y1, 2) + pow($z2 - $z1, 2) * 1.0);

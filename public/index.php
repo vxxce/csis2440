@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Zachary Olpin</title>
-  <link rel="stylesheet" type="text/css" href="./index.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/index.css">
 </head>
 <body>
   <header>
   <a class="logo" href="index.php">Zachary Olpin</a>
     <nav>
       <ul class="nav-list">
-        <li class="nav-link"><a href="a1.php">A1</a></li class="nav-link">
-        <li class="nav-link"><a href="a2.php">A2</a></li>
-        <li class="nav-link"><a href="a3.php">A3</a></li>
-        <li class="nav-link"><a href="shop.php">Shop</a></li>
-        <li class="nav-link"><a href="exercises.php">Exercises</a></li>
+        <li class="nav-link"><a href="pages/assignments/a1.php">A1</a></li>
+        <li class="nav-link"><a href="pages/assignments/a2.php">A2</a></li>
+        <li class="nav-link"><a href="pages/assignments/a3.php">A3</a></li>
+        <li class="nav-link"><a href="pages/assignments/shop.php">Shop</a></li>
+        <li class="nav-link"><a href="exercises/exercises.php">Exercises</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <h2>About</h2>
     <hr>
-    <img src="me.jpg" alt="Portrait of the author" width="250px" />
+    <img src="assets/imgs/me.jpg" alt="Portrait of the author" width="250px" />
     <p>
       Hi! I'm Zachary. I'm a first-semester student in the CSIS program at Salt Lake Community College.
       I also have a degree in Psychology from the University of Utah.
