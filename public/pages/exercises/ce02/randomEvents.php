@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>CE-02: Random Events</title>
+  <title>Random Events</title>
   <link rel="stylesheet" type="text/css" href="/assets/css/index.css">
 </head>
 
@@ -15,9 +15,9 @@
     <nav>
       <a id="mobileNav">Menu</a>
       <ul class="nav-list" id="nav-list">
+        <li class="nav-link"><a href="/pages/exercises/exercises.php">Exercises</a></li>
         <li class="nav-link"><a href="/pages/assignments/assignments.php">Assignments</a></li>
         <li class="nav-link"><a href="/pages/assignments/shop.php">Shop</a></li>
-        <li class="nav-link"><a href="/pages/exercises/exercises.php">Exercises</a></li>
       </ul>
     </nav>
   </header>
@@ -47,7 +47,7 @@
         }
       }
       echo "</tbody></table>";
-      echo $score >= 1 
+      echo $score >= 1
         ? "<p><strong>Player wins with the final score of: $score</strong></p>"
         : "<p><strong>Player loses with final score of: $score</strong></p>";
       echo "<input id='reload' type='submit' value='PLAY AGAIN'/ >";
@@ -105,8 +105,8 @@
       <label for='year'>Try some other year: </label>
       <input name='year' id='year' type='text' placeholder='Enter a year' max-length='4' />
       <p>
-      <button id='checkYear' type='submit'>Check</button>
-      <p id='answer'></p>
+        <button id='checkYear' type='submit'>Check</button>
+        <p id='answer'></p>
     </section>
   </main>
   <script src="/assets/js/chineseZodiac.js" type="application/javascript"></script>

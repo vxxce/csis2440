@@ -16,14 +16,14 @@ $arrival = $_POST['arrival'];
 </head>
 
 <body>
-<header>
-  <a class="logo" href="/index.php">Zachary Olpin</a>
-  <nav>
+  <header>
+    <a class="logo" href="/index.php">Zachary Olpin</a>
+    <nav>
       <a id="mobileNav">Menu</a>
       <ul class="nav-list" id="nav-list">
+        <li class="nav-link"><a href="/pages/exercises/exercises.php">Exercises</a></li>
         <li class="nav-link"><a href="/pages/assignments/assignments.php">Assignments</a></li>
         <li class="nav-link"><a href="/pages/assignments/shop.php">Shop</a></li>
-        <li class="nav-link"><a href="/pages/exercises/exercises.php">Exercises</a></li>
       </ul>
     </nav>
   </header>
@@ -40,7 +40,7 @@ $arrival = $_POST['arrival'];
         echo "<img src='/assets/imgs/planets/$departure.jpg'></img></div>";
         ?>
       </div>
-      
+
       <div id="destination">
         <h3>Arriving At:</h3>
         <?php
@@ -49,21 +49,21 @@ $arrival = $_POST['arrival'];
         ?>
       </div>
       <div id="duration">
-      <?php
-      $dist = round(PlanetDistance(
-        $planets[$departure]["x"],
-        $planets[$departure]["y"],
-        $planets[$departure]["z"],
-        $planets[$arrival]["x"],
-        $planets[$arrival]["y"],
-        $planets[$arrival]["z"]
-      ), 2);
-      $time = round($dist * $ships[$ship]['speed'], 2);
-      echo "<h3>Trip Details</h3>";
-      echo "<p><strong>Distance: </strong>$dist AU.</p>";
-      echo "<p><strong>Travel time: </strong>$time days</p>";
-      ?>
-    </div>
+        <?php
+        $dist = round(PlanetDistance(
+          $planets[$departure]["x"],
+          $planets[$departure]["y"],
+          $planets[$departure]["z"],
+          $planets[$arrival]["x"],
+          $planets[$arrival]["y"],
+          $planets[$arrival]["z"]
+        ), 2);
+        $time = round($dist * $ships[$ship]['speed'], 2);
+        echo "<h3>Trip Details</h3>";
+        echo "<p><strong>Distance: </strong>$dist AU.</p>";
+        echo "<p><strong>Travel time: </strong>$time days</p>";
+        ?>
+      </div>
   </main>
   <script src="/assets/js/navbar.js" type="application/javascript"></script>
 </body>

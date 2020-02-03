@@ -5,10 +5,10 @@ const colors = [
   '#786a82', '#6b3434', '#586a6a',
   '#7a5256', '#373b3f', '#3a4c37',
   '#4686ba'
-].sort((a,b) => Math.random() >= Math.random())
+].sort((_a, _b) => Math.random() >= Math.random())
 
 const subDirItems = [...document.getElementsByClassName('dirButton')]
-  
+
 subDirItems.map((v, i) => {
   v.style.backgroundColor = colors[i]
 })
