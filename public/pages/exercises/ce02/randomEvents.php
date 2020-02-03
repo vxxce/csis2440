@@ -10,32 +10,52 @@
 </head>
 
 <body>
+  <header>
+    <a class="logo" href="/index.php">Zachary Olpin</a>
+    <nav>
+      <a id="mobileNav">Menu</a>
+      <ul class="nav-list" id="nav-list">
+        <li class="nav-link"><a href="/pages/assignments/assignments.php">Assignments</a></li>
+        <li class="nav-link"><a href="/pages/assignments/shop.php">Shop</a></li>
+        <li class="nav-link"><a href="/pages/exercises/exercises.php">Exercises</a></li>
+      </ul>
+    </nav>
+  </header>
   <main>
     <h2>10-round random score game</h2>
-    <p><em>It's... kind of a game?</em></p>
-    <p>
+    <div class='hr'></div>
+    <section>
       <?php
       $score = 0;
-      echo "<table>\n<thead><tr><th>Player</th><th>Computer</th><th>Rounds</th></tr></thead>\n<tbody>\n";
-      for ($i = 0; $i < 10; $i++) {
+      echo "<div id='randomGame'>
+              <table>
+                <thead>
+                  <tr><th></th><th>Player</th><th>Computer</th><th>Result</th></tr>
+                </thead>
+                <tbody>";
+      for ($i = 1; $i < 11; $i++) {
         $playerScore = rand(0, 100);
         $compScore = rand(0, 100);
         if ($playerScore - $compScore > 0) {
           $score++;
-          echo "<tr><td>$playerScore</td><td>$compScore</td><td>Player wins round.</td></tr>\n";
+          echo "<tr><th>Round " . $i . "</th><td>$playerScore</td><td>$compScore</td><td>Player wins!</td></tr>\n";
         } elseif ($playerScore - $compScore < 0) {
           $score--;
-          echo "<tr><td>$playerScore</td><td>$compScore</td><td>Computer wins round.</td></tr>\n";
+          echo "<tr><th>Round " . $i . "</th><td>$playerScore</td><td>$compScore</td><td>Computer wins!</td></tr>\n";
         } else {
-          echo "<tr><td>$playerScore</td><td>$compScore</td><td>Tie!</td></tr>\n";
+          echo "<tr><th>Round " . $i . "</th><td>$playerScore</td><td>$compScore</td><td>Tie!</td></tr>\n";
         }
       }
-      echo "</tbody>\n</table>\n";
-      echo $score >= 1 ? "<p>Player wins with the final score of: $score</p>" : "<p>Player loses with final score of: $score</p>";
-      echo "<hr />";
+      echo "</tbody></table>";
+      echo $score >= 1 
+        ? "<p><strong>Player wins with the final score of: $score</strong></p>"
+        : "<p><strong>Player loses with final score of: $score</strong></p>";
+      echo "<input id='reload' type='submit' value='PLAY AGAIN'/ >";
+      echo "</div>";
 
-      //Year of the---
-      echo "<h1>Chinese Zodiac</h1>";
+      // Chinese Zodiac
+      echo "<h2>Chinese Zodiac</h2>";
+      echo "<div class='hr'></div>";
       $year = date("Y");
       echo "<p>It is the presently the year of the: <em>";
       switch ($year % 12) {
@@ -80,13 +100,17 @@
       }
       echo "</em></p>";
       ?>
-
+    </section>
+    <section>
       <label for='year'>Try some other year: </label>
       <input name='year' id='year' type='text' placeholder='Enter a year' max-length='4' />
+      <p>
       <button id='checkYear' type='submit'>Check</button>
       <p id='answer'></p>
+    </section>
   </main>
-  <script src="/assets/js/chineseZodiac.js" type="text/javascript"></script>
+  <script src="/assets/js/chineseZodiac.js" type="application/javascript"></script>
+  <script src="/assets/js/navbar.js" type="application/javascript"></script>
 </body>
 
 </html>
