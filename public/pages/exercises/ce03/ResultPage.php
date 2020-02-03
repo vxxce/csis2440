@@ -5,12 +5,14 @@ $ship = $_POST['ship'];
 $departure = $_POST['departure'];
 $arrival = $_POST['arrival'];
 ?>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="/assets/css/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Results</title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/index.css">
 </head>
 
 <body>
