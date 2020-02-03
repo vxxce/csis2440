@@ -13,18 +13,19 @@
   <header>
     <a class="logo" href="/index.php">Zachary Olpin</a>
     <nav>
-      <ul class="nav-list">
-        <li class="nav-link"><a href="/pages/assignments/a1.php">A1</a></li>
-        <li class="nav-link"><a href="/pages/assignments/a2.php">A2</a></li>
-        <li class="nav-link"><a href="/pages/assignments/a3.php">A3</a></li>
+      <a id="mobileNav">Menu</a>
+      <ul class="nav-list" id="nav-list">
+        <li class="nav-link"><a href="/pages/assignments/assignments.php">Assignments</a></li>
         <li class="nav-link"><a href="/pages/assignments/shop.php">Shop</a></li>
         <li class="nav-link"><a href="/pages/exercises/exercises.php">Exercises</a></li>
-     </ul>
+      </ul>
     </nav>
   </header>
   <main>
     <h2>A2</h2>
+    <div class='hr'></div>
   </main>
+  <script src="/assets/js/navbar.js" type="application/javascript"></script>
 </body>
 
 </html>
