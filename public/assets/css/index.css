@@ -17,6 +17,7 @@ input[type="submit"], button {
   font-size: 1rem;
   display: block;
   padding: 1rem 0.8rem;
+  margin: 1rem 0;
   background-color: #774f4f;
   border-radius: 2.5em;
   border: none;
