@@ -195,6 +195,19 @@ input#reload {
   display: inline-block
 }
 
+form#characterCreator {
+  padding: 1rem;
+}
+
+form#characterCreator > select, input {
+  display: inline-block;
+  margin: 1rem;
+}
+
+form#characterCreator > input[type="radio"] {
+  display: inline;
+}
+
 /* small screens */
 
 @media (max-width: 900px) {
