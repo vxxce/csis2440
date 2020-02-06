@@ -16,7 +16,7 @@ a:hover {
 input[type="submit"], button {
   font-size: 1rem;
   display: block;
-  padding: 1rem 0.8rem;
+  padding: 0.75rem 1rem;
   margin: 1rem 0;
   background-color: #774f4f;
   border-radius: 2.5em;
@@ -192,22 +192,51 @@ th, tr, td {
 }
 
 input#reload {
-  display: inline-block
+  display: inline-block;
 }
 
 form#characterCreator {
   padding: 1rem;
 }
 
-form#characterCreator > select, input {
+form#characterCreator > select, input[type="text"], input[type="number"] {
   display: inline-block;
-  margin: 1rem;
+  margin: 0.5rem;
+  width: max-content;
+  vertical-align: middle;
+  text-align: left;
 }
 
-form#characterCreator > input[type="radio"] {
-  display: inline;
+form#characterCreator > input[type="number"] {
+  width: 20%;
 }
 
+form > div#gender-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr;
+}
+
+#gender-container > label#gender {
+  grid-column: 1;
+}
+
+#gender-container > div {
+  display: block;
+  grid-column: 2;
+  text-align: left;
+  padding: 0 0 0 1rem;
+}
+
+#gender-container > div > input {
+  vertical-align: top;
+  width: auto;
+}
+
+select, input {
+  padding: 0.25rem;
+  font-size: 1rem;
+}
 /* small screens */
 
 @media (max-width: 900px) {
