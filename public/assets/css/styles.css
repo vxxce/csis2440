@@ -243,9 +243,23 @@ select, input {
   font-size: 1rem;
 }
 
+main > div#captain-wrapper {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1.5rem;
+}
+
+.profile {
+  grid-column: 1;
+  grid-row: 1;
+}
+
 .transmissions {
+  grid-column: 2;
+  grid-row: 1;
   max-width: 30rem;
-  min-width: 15rem;
+  min-width: 20rem;
   margin: 2rem auto;
   padding: 1rem 1.75rem;
   border-radius: 1.5rem;
@@ -365,4 +379,22 @@ select, input {
   .container h4 {
     font-size: 10vw;
   }
+
+  main > div#captain-wrapper {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .transmissions {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  .profile {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
 }
