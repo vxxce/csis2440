@@ -23,7 +23,7 @@
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <title>Zachary Olpin</title>
-  <link rel="stylesheet" type="text/css" href="/assets/css/index.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
 </head>
 
 <body>
