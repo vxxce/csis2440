@@ -6,8 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Character Creator</title>
-  <link rel="stylesheet" type="text/css" href="/assets/css/index.css">
+  <title>Captain Generator</title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
 </head>
 
 <body>
@@ -23,32 +23,17 @@
     </nav>
   </header>
   <main>
-    <h2>Character Creator</h2>
+    <h2>Captain Generator</h2>
     <div class='hr'></div>
-    <form id="characterCreator" action="characterResult.php" method="POST">
-      <label for="name">Name: </label>
-      <input type="text" name="name" id="name" required autofocus/>
+    <form id="captainGenerator" action="captainResult.php" method="POST">
+      <label for="firstname">First Name: </label>
+      <input type="text" name="firstname" id="firstname" required autofocus/>
       <br>
-      <label for="race">Race: </label>
-      <select name="race" id="race" required>
-        <option>&nbsp;</option>
-        <option value="human">Human</option>
-        <option value="elf">Elf</option>
-        <option value="dwarf">Dwarf</option>
-        <option value="halfling">Halfling</option>
-      </select>
-      <br>
-      <label for="class">Class: </label>
-      <select name="class" id="class" required>
-        <option>&nbsp;</option>
-        <option value="cleric">Cleric</option>
-        <option value="fighter">Fighter</option>
-        <option value="magicUser">Magic-user</option>
-        <option value="thief">Thief</option>
-      </select>
+      <label for="lastname">Last Name: </label>
+      <input type="text" name="lastname" id="lastname" required />
       <br>
       <label for="age">Age: </label>
-      <input type="number" name="age" id="age" required/>
+      <input type="number" name="age" id="age" maxlength="3" required/>
       <br>
       <div id="gender-container">
         <label for="gender" id="gender">Gender: </label>
@@ -61,8 +46,6 @@
           <label for="genderF">Female</label>
         </div>
       </div>
-      <label for="kingdom">Kingdom: </label>
-      <input type="text" name="kingdom" id="kingdom" required/>
       <button value="create">CREATE</button>
     </form>
   </main>
