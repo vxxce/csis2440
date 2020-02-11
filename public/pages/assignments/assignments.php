@@ -10,24 +10,14 @@
 </head>
 
 <body>
-  <header>
-    <a class="logo" href="/index.php">Zachary Olpin</a>
-    <nav>
-      <a id="mobileNav">Menu</a>
-      <ul class="nav-list" id="nav-list">
-        <li class="nav-link"><a href="/pages/exercises/exercises.php">Exercises</a></li>
-        <li class="nav-link"><a href="/pages/assignments/assignments.php">Assignments</a></li>
-        <li class="nav-link"><a href="/pages/assignments/shop.php">Shop</a></li>
-      </ul>
-    </nav>
-  </header>
+  <?php require("../headerNav.php"); ?>
   <main>
     <h2>Assignments</h2>
     <div class='hr'></div>
     <div class="directory">
-      <div class="dirButton"><a href="#">A-1</a></div>
-      <div class="dirButton"><a href="#">A-2</a></div>
-      <div class="dirButton"><a href="#">A-3</a></div>
+      <div class="dirButton"><a href="/pages/assignments/a1.php">A-1</a></div>
+      <div class="dirButton"><a href="/pages/assignments/a2.php">A-2</a></div>
+      <div class="dirButton"><a href="/pages/assignments/a3.php">A-3</a></div>
     </div>
   </main>
   <script src="/assets/js/subDir.js" type="application/javascript"></script>

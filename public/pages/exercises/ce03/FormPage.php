@@ -18,17 +18,7 @@ $shipsArray = ["Crate", "Lightening", "Starliner", "VD Tug", "Biel-Corp II", "VD
 </head>
 
 <body>
-  <header>
-    <a class="logo" href="/index.php">Zachary Olpin</a>
-    <nav>
-      <a id="mobileNav">Menu</a>
-      <ul class="nav-list" id="nav-list">
-        <li class="nav-link"><a href="/pages/exercises/exercises.php">Exercises</a></li>
-        <li class="nav-link"><a href="/pages/assignments/assignments.php">Assignments</a></li>
-        <li class="nav-link"><a href="/pages/assignments/shop.php">Shop</a></li>
-      </ul>
-    </nav>
-  </header>
+  <?php require("../../headerNav.php"); ?>
   <main>
     <h2>Distance Calculator</h2>
     <div class='hr'></div>

@@ -6,21 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>A1</title>
-  <link rel="stylesheet" type="text/css" href="/assets/css/stylees.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
 </head>
 
 <body>
-  <header>
-    <a class="logo" href="/index.php">Zachary Olpin</a>
-    <nav>
-      <a id="mobileNav">Menu</a>
-      <ul class="nav-list" id="nav-list">
-        <li class="nav-link"><a href="/pages/exercises/exercises.php">Exercises</a></li>
-        <li class="nav-link"><a href="/pages/assignments/assignments.php">Assignments</a></li>
-        <li class="nav-link"><a href="/pages/assignments/shop.php">Shop</a></li>
-      </ul>
-    </nav>
-  </header>
+  <?php require("../headerNav.php"); ?>
   <main>
     <h2>A1</h2>
     <div class='hr'></div>

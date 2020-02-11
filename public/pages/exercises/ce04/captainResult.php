@@ -59,17 +59,7 @@ for ($i = 0; $i < 5; $i++) {
 </head>
 
 <body>
-  <header>
-    <a class="logo" href="/index.php">Zachary Olpin</a>
-    <nav>
-      <a id="mobileNav">Menu</a>
-      <ul class="nav-list" id="nav-list">
-        <li class="nav-link"><a href="/pages/exercises/exercises.php">Exercises</a></li>
-        <li class="nav-link"><a href="/pages/assignments/assignments.php">Assignments</a></li>
-        <li class="nav-link"><a href="/pages/assignments/shop.php">Shop</a></li>
-      </ul>
-    </nav>
-  </header>
+  <?php require("../../headerNav.php"); ?>
   <main>
     <h2>Captain Generator</h2>
     <div class='hr'></div>
@@ -98,7 +88,6 @@ EOT;
         echo <<<EOT
         <div class="transmissions">
           <h2>uniTWEET Transmissions</h2>
-
           <h3>$e_name</h3>
           <span><strong>Public UUID: </strong><em>::3b0d0be8::</em></span>
           <hr>
