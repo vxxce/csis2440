@@ -28,14 +28,14 @@ input[type="submit"], button {
 /* header +  nav bar */
 
 
-header {
+header#nav {
   background-color: #313638;
   display: flex;
   justify-content: space-between;
   font-size: 1.8rem;
 }
 
-header .logo {
+header#nav .logo {
   display: inline-block;
   padding: 1rem;
   text-transform: uppercase;
@@ -68,7 +68,7 @@ header .logo {
 }
 
 main {
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   font-size: 1.4rem;
   line-height: 2rem;
 }
@@ -316,7 +316,7 @@ main > div#captain-wrapper {
 
 @media (max-width: 900px) {
 
-  header {
+  header#nav {
     display: grid;
     grid-template-rows: 2;
     justify-content: center;
@@ -336,6 +336,10 @@ main > div#captain-wrapper {
 
   .logo {
     padding: 0;
+  }
+
+  main h2 {
+    text-align: center;
   }
 
   #about {
