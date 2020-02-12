@@ -1,4 +1,4 @@
-<header>
+<header id="nav">
   <a class="logo" href="/index.php">Zachary Olpin</a>
   <nav>
     <a id="mobileNav">Menu</a>
