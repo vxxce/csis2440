@@ -56,7 +56,7 @@ longbows).</p>
 range, and are able to detect slanting passages, traps,
 shifting walls and new construction on a roll of 1-2 on 1d6;
 a search must be performed before this roll may be made.</p>
-<p><b>Saving Throws: Dwarves save at +4 vs. Death Ray or
+<p><b>Saving Throws:</b> Dwarves save at +4 vs. Death Ray or
 Poison, Magic Wands, Paralysis or Petrify, and Spells, and
 at +3 vs. Dragon Breath.</p>}
  
