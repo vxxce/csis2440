@@ -15,7 +15,7 @@
     <h2>Assignments</h2>
     <div class='hr'></div>
     <div class="directory">
-      <div class="dirButton"><a href="/pages/assignments/a1.php">A-1</a></div>
+      <div class="dirButton"><a href="/pages/assignments/phpPage/characterCreator.php">PHP Page</a></div>
       <div class="dirButton"><a href="/pages/assignments/a2.php">A-2</a></div>
       <div class="dirButton"><a href="/pages/assignments/a3.php">A-3</a></div>
     </div>
