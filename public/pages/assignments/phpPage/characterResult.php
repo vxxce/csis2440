@@ -10,8 +10,8 @@ $charImgPath = "/assets/imgs/characters/" . array_reduce([$e_race, $e_class, $e_
   return $acc . substr($curr, 0, 2);
 }, "") . ".jpg";
 
-// Read from local files RaceInfo.txt and ClassInfo.text. Make arrays with race/class name as key
-// and relevant portion of file as value.
+// Read from local files RaceInfo.txt and ClassInfo.text. Clean up the raw text a bit and 
+// make arrays with race/class name as key and relevant captured portion of file as value.
 $raceInfo = file_get_contents("RaceInfo.txt");
 $raceInfo = array_combine(["human", "elf", "dwarf", "halfling", "toss"]
                           , explode("}", preg_replace('/{/', '', preg_replace('/[\n\r]/', ' ', $raceInfo))));
@@ -74,12 +74,14 @@ array_pop($classInfo);
       <div id="character-description">
         <section id="race-description">
           <?php
+          // Render race description from raceInfo array
           echo "<h4>Race: $e_race</h4>";
           echo $raceInfo[lcfirst($e_race)];          
           ?>
         </section>
         <section id="class-description">
           <?php
+          // Render class description from classInfo array
           echo "<h4>Class: $e_class</h4>";
           echo $classInfo[lcfirst($e_class)];          
           ?>
