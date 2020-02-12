@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+// Sanitize and capitalize $_POST values and extract into symbol table with prefix
+extract(array_map("ucwords", array_map("htmlentities", $_POST)), EXTR_PREFIX_ALL, "e");
+
+// Construct a filepath from race, class, and gender values to use as img src for character photo.
+$charImgPath = "/assets/imgs/characters/" . array_reduce([$e_race, $e_class, $e_gender], function ($acc, $curr) {
+  return $acc . substr($curr, 0, 2);
+}, "") . ".jpg";
+
+// Read from local files RaceInfo.txt and ClassInfo.text. Make arrays with race/class name as key
+// and relevant portion of file as value.
+$raceInfo = file_get_contents("RaceInfo.txt");
+$raceInfo = array_combine(["human", "elf", "dwarf", "halfling", "toss"]
+                          , explode("}", preg_replace('/{/', '', preg_replace('/[\n\r]/', ' ', $raceInfo))));
+array_pop($raceInfo);
+$classInfo = file_get_contents("ClassInfo.txt");
+$classInfo = array_combine(["fighter", "cleric", "thief", "magic-User", "toss"]
+                          , explode("}", preg_replace('/{/', '', preg_replace('/[\n\r]/', ' ', $classInfo))));
+array_pop($classInfo);
+
+?>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,55 +39,50 @@
     <div class="hr"></div>
     <div id="character-container">
       <header id="character-header">
-        <h3 id="character-title">(name) of (kingdom)</h3>
+        <h3 id="character-title">
+        <?php
+        // Kingdom field in form was not required. If no entry, use fallback value
+        if ($e_kingdom) echo $e_characterName . " of " . $e_kingdom;
+        else echo $e_characterName . " of the Unruled";
+        ?>
+        </h3>
       </header>
       <figure id="character-figure">
+        <?php 
+        // Use dynamically constructed filepath to get correct character image
+        echo "<img id='character-img' src='$charImgPath' alt='Your character' />\n" 
+        ?>
         <figcaption>
-          {RACE} {CLASS}
-          <br>
-          AGE age
+          <?php
+          // Caption character image with race, class, and age.
+          echo ucfirst($e_race) . " " . ucfirst($e_class);
+          echo "\n<br>\nAge $e_age";
+          ?>
         </figcaption>
-        <img id="character-img" src="/assets/imgs/HuThMa.jpg" alt="Your character" />
       </figure>
       <div id="character-stats">
         <ul id="stats-list">
-          <li class="stats-item"><b>Strength:</b> 10</li>
-          <li class="stats-item"><b>Constitution:</b> 10</li>
-          <li class="stats-item"><b>Dexterity:</b> 10</li>
-          <li class="stats-item"><b>Wisdom:</b> 10</li>
-          <li class="stats-item"><b>Intelligence:</b> 10</li>
-          <li class="stats-item"><b>Charisma:</b> 10</li>
+          <?php 
+          // Loop over character ability, assign random scores from 1-10 and render as list items.
+          $stats = ["Strength: ", "Constitution: ", "Dexterity: ", "Wisdom: ", "Intelligence: ", "Charisma: "];
+          foreach ($stats as $value) {
+            echo "<li class='stats-item'><b>$value</b>" . rand(1, 10) . "</li>";
+          };
+          ?>
         </ul>
       </div>
       <div id="character-description">
         <section id="race-description">
-          <h4>Race: (race)</h4>
-          <p><b>Description:</b> Humans come in a broad variety of shapes and sizes. An
-            average Human male in good health stands around six feet tall and weighs about
-            175 pounds. Most Humans live around 75 years.</p>
-          <p><b>Restrictions</b>: Humans
-            may be any single class. They have no minimum or maximum ability score requirements.
-          </p>
-          <p><b> Special Abilities</b>: Humans learn unusually quickly, gaining a bonus
-            of 10% to all experience "points earned. Saving Throws: Humans are the “standard,”
-            and thus have no saving throw bonuses.</p>
+          <?php
+          echo "<h4>Race: $e_race</h4>";
+          echo $raceInfo[lcfirst($e_race)];          
+          ?>
         </section>
         <section id="class-description">
-          <h4>Class: (Class)</h4>
-          <p>Fighters include soldiers, guardsmen, barbarian warriors,
-            and anyone else for whom fighting is a way of life. They
-            train in combat, and they generally approach problems
-            head on, weapon drawn.</p>
-          <p>Not surprisingly, Fighters are best at fighting of all the
-            classes. They are also the hardiest, able to take more
-            punishment than any other class. Although they are not
-            skilled in the ways of magic, Fighters can nonetheless use
-            many magic items, including but not limited to magical
-            weapons and armor.</p>
-          <p>The Prime Requisite for Fighters is Strength; a character
-            must have a Strength score of 9 or higher to become a
-            Fighter. Members of this class may wear any armor and
-            use any weapon.</p>
+          <?php
+          echo "<h4>Class: $e_class</h4>";
+          echo $classInfo[lcfirst($e_class)];          
+          ?>
         </section>
       </div>
     </div>
