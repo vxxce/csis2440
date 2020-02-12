@@ -318,7 +318,7 @@ main > div#captain-wrapper {
 
   header#nav {
     display: grid;
-    grid-template-rows: 2;
+    grid-template-rows: auto auto;
     justify-content: center;
     text-align: center;
   }
@@ -343,8 +343,8 @@ main > div#captain-wrapper {
   }
 
   #about {
-    grid-template-columns: 1;
-    grid-template-rows: 2;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
   }
 
   #about > #author-img {

@@ -7,8 +7,8 @@ div#character-container {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto auto 1fr;
   gap: 1rem;
-  padding: 1.5rem;
-  margin-top: 1rem;
+  padding: 2rem;
+  margin-top: 1.5rem;
   background-color: #f8f8f7;
   border-radius: 1.5rem;
   align-items: center;
@@ -21,8 +21,16 @@ header#character-header {
 }
 
 header#character-header > h3#character-title {
-  margin: 0rem;
+  margin: -2rem -2rem 0 -2rem;
+  background: #645d58;
   text-align: center;
+  padding: 2rem;
+  text-align: center;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  color: #f8f8f7;
+  font-size: 2rem;
+  line-height: 2.25rem;
 }
 
 figure#character-figure {
@@ -41,6 +49,8 @@ figure#character-figure > img {
 }
 
 div#character-stats {
+  font-size: 1rem;
+  align-self: center;
   display: inline-block;
   grid-column: 2 / span 2;
   grid-row: 2;
@@ -48,7 +58,7 @@ div#character-stats {
 
 div#character-stats > ul {
   list-style: none;
-  margin: 0;
+  text-align: center;
   padding: 0;
 }
 
@@ -57,21 +67,39 @@ div#character-description {
   grid-row: 3;
 }
 
-@media (min-width: 500px) {
+section#race-description, section#race-description > h4 {
+  margin-top: 0.25rem;
+}
 
+div#character-description section > h4 {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 500px) {
+  
   div#character-container {
     font-size: 1.25rem;
     line-height: 1.75rem;
     gap: 1.5rem;
-    padding: 1.5rem;
+    padding: 2rem;
   }
-
+  
+  div#character-stats {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    align-self: center;
+  }
+  
   header#character-header > h3 {
     font-size: 1.75rem;
   }
   
   figure#character-figure > img {
     width: 35vw;
+  }
+
+  div#character-description section > h4 {
+    font-size: 1.75rem;
   }
 }
 
@@ -89,7 +117,7 @@ div#character-description {
   header#character-header > h3 {
     font-size: 2rem;
   }
-
+  
   figure#character-figure > img {
     border: 0.5rem solid #6e8898;
   }
@@ -98,12 +126,14 @@ div#character-description {
     grid-row: 3;
     grid-column: 1;
     text-align: center;
+    align-self: start;
   }
-
+  
   div#character-container > div#character-description h4 {
+    font-size: 2rem;;
     margin: 0;
   }
-
+  
   div#character-description {
     grid-column: 2 / span 2;
     grid-row: 2 / span 2;
