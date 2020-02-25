@@ -13,8 +13,7 @@
 <body>
   <?php
 
-
-require "../../headerNav.php";
+    require "../../headerNav.php";
     require_once "planets.php";
     require_once $_SERVER["DOCUMENT_ROOT"] . "/../private/conn.php";
 
@@ -25,7 +24,7 @@ require "../../headerNav.php";
         $query->execute([$v['name'], $v['x'], $v['y'], $v['z'], $v['description']]);
       };
     } catch (\PDOException $e) {
-      throw new \PDOException($e->getMessage(), (int)$e->getCode());
+      echo "<h1>500 - Internal Server Error</h1>";
     }
     
     try {
@@ -33,12 +32,11 @@ require "../../headerNav.php";
       $query->execute();
       $res = $query->fetchAll();
     } catch (\PDOException $e) {
-      throw new \PDOException($e->getMessage() + "S E L E C T", (int)$e->getCode());
+      echo "<h1>500 - Internal Server Error</h1>";
     }
+
     $query = null;
     $pdo = null;
-    
- print_r($res)
     
   ?>
   
