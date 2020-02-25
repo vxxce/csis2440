@@ -20,7 +20,7 @@
       <div class="dirButton"><a href="/pages/exercises/ce03/FormPage.php">Using Forms</a></div>
       <div class="dirButton"><a href="/pages/exercises/ce04/captainGenerator.php">Reading Files</a></div>
       <div class="dirButton"><a href="/pages/exercises/ce05/screenshot.php">Workbench Setup</a></div>
-      <div class="dirButton"><a href="#">Database CRUD</a></div>
+      <div class="dirButton"><a href="/pages/exercises/ce06/crud.php">Database CRUD</a></div>
       <div class="dirButton"><a href="#">Session & Login</a></div>
       <div class="dirButton"><a href="#">JS Page</a></div>
       <div class="dirButton"><a href="#">JS Control</a></div>
