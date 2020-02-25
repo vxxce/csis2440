@@ -13,23 +13,20 @@
 <body>
   <?php
 
-use function PHPSTORM_META\map;
 
 require "../../headerNav.php";
     require_once "planets.php";
     require_once $_SERVER["DOCUMENT_ROOT"] . "/../private/conn.php";
 
     try {
-      $pdo = new PDO($dsn, $sec_un, $sec_pw);
-      foreach ($planets as $p => $v) {
+      $pdo = new PDO($dsn, $sec_un, $sec_pw) or die('no go');
+      foreach ($planets as $k => $v) {
         $query = $pdo->prepare("INSERT INTO `planets` (`name`, `x`, `y`, `z`, `description`) VALUES (?, ?, ?, ?, ?)");
         $query->execute([$v['name'], $v['x'], $v['y'], $v['z'], $v['description']]);
       };
     } catch (\PDOException $e) {
       throw new \PDOException($e->getMessage(), (int)$e->getCode());
     }
-    $query = null;
-    $pdo = null;
     
     try {
       $query = $pdo->prepare("SELECT * FROM `planets`");
@@ -38,6 +35,8 @@ require "../../headerNav.php";
     } catch (\PDOException $e) {
       throw new \PDOException($e->getMessage() + "S E L E C T", (int)$e->getCode());
     }
+    $query = null;
+    $pdo = null;
     
  print_r($res)
     
