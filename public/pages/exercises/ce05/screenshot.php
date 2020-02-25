@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
   <style>
     img {
-      width: 75%;
+      width: 90%;
     }
     figure {
       margin: 2rem;
