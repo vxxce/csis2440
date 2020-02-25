@@ -22,6 +22,7 @@
   <img src="/assets/imgs/mysqlAdminGui.png" alt="Screenshot of Sequel Pro" />
   <figcaption>Screenshot of Sequel Pro</figcaption>
   </figure>
+  <script src="/assets/js/navbar.js" type="application/javascript"></script>
 </body>
 
 </html>
