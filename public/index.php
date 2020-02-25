@@ -33,22 +33,20 @@
     <div class='hr'></div>
     <div id="about">
       <section>
-        Hi! I'm Zachary. I'm a first-semester student in the CSIS program at Salt Lake Community College.
-        I also have a degree in Psychology from the University of Utah.
-        I have taught myself a small bit of programming in my own time
-        (mostly in Python and Javascript) but am otherwise new to world
-        of Computer Science. You can view a few of my personal projects on
-        my <a href="https://github.com/vxxce/">Github</a>.
         <p>
-          I am also a painter! I'm more of a hobbyist than a professional,
-          but you can see my work on display now at the Bountiful Davis Art Center.
-          The solo show is called <em>Having Been Utterly Persuaded By a Stone</em>
-          and will be up until Feb. 14th.
-          <p>
-            Some of my other hobbies include the board game "Go" (AKA Baduk or Weiqi),
-            photography, camping, bookbinding, and cycling. I could never settle on
-            a favorite film or book but the first two that come to mind are, respectively,
-            <em>Waking Life</em> and <em>Behave: The Biology of Humans at Our Best and Worst</em>.
+          Hi! I'm Zachary. I'm a first-semester student in the CSIS program at Salt Lake Community College.
+          I also have a degree in Psychology from the University of Utah.
+          I have taught myself a small bit of programming in my own time
+          (mostly in Python and Javascript) but am otherwise new to world
+          of Computer Science. You can view a few of my personal projects on
+          my <a href="https://github.com/vxxce/">Github</a>.
+        </p>
+        <p>
+          Some of my other hobbies include painting, the board game "Go" (AKA Baduk or Weiqi),
+          photography, camping, bookbinding, and cycling. I could never settle on
+          a favorite film or book but the first two that come to mind are, respectively,
+          <em>Waking Life</em> and <em>Behave: The Biology of Humans at Our Best and Worst</em>.
+        </p>
       </section>
       <img id="author-img" src="/assets/imgs/me.jpg" alt="Portrait of the author" />
       <script src="/assets/js/navbar.js" type="application/javascript"></script>
