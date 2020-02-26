@@ -2,7 +2,7 @@ body, html {
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  background-color: #d3d0cb;
+  background-color: #f0eeec;
 }
 
 a {
@@ -87,6 +87,26 @@ main a {
 
 main h1 {
   line-height: 3rem;
+}
+
+main p.comment {
+  color: rgb(82, 140, 189);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+main h3 {
+  width: max-content;
+  border-bottom: 0.25rem solid black;
+}
+
+main h4 {
+  text-transform: uppercase;
+}
+
+main ul.no-list {
+  list-style: none;
+  padding: 0 2rem 1rem 2rem;
 }
 
 /* index.php */
