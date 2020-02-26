@@ -88,19 +88,4 @@ array("name" => "Whitefall",
 "description"=>"Whitefall is the fourth moon of Athens, the ninth planet orbiting the star Georgia. A large percentage of the world is owned by a woman named Patience. Whitefall is said to not be civilization &apos;in the strictest sense.&apos;")
 );
 
-$ships = array(
-array("name" => "Crate",
-"speed" => 1.8),
-array("name" => "Lightening",
-"speed" => 4.3),
-array("name" => "Starliner",
-"speed" => 2.4),
-array("name" => "VD Tug",
-"speed" => 1.4),
-array("name" => "Biel-Corp II",
-"speed" => 1.3),
-array("name" => "VD Behemoth",
-"speed" => 0.5)
-);
-
 ?>
