@@ -18,7 +18,7 @@
     require_once $_SERVER["DOCUMENT_ROOT"] . "/../private/conn.php";
 
     try {
-      $pdo = new PDO($dsn, $sec_un, $sec_pw) or die('no go');
+      $pdo = new PDO($dsn, $sec_un, $sec_pw);
       foreach ($planets as $k => $v) {
         $coordinates = json_encode(["x" => $v["x"], "y" => $v["y"], "z" => $v["z"]]);
         $query = $pdo->prepare("INSERT INTO `planets` (`name`, `coordinates`, `description`) VALUES (?, ?, ?)");
