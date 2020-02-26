@@ -20,24 +20,30 @@
     try {
       $pdo = new PDO($dsn, $sec_un, $sec_pw) or die('no go');
       foreach ($planets as $k => $v) {
-        $query = $pdo->prepare("INSERT INTO `planets` (`name`, `x`, `y`, `z`, `description`) VALUES (?, ?, ?, ?, ?)");
-        $query->execute([$v['name'], $v['x'], $v['y'], $v['z'], $v['description']]);
+        $coordinates = json_encode(["x" => $v["x"], "y" => $v["y"], "z" => $v["z"]]);
+        $query = $pdo->prepare("INSERT INTO `planets` (`name`, `coordinates`, `description`) VALUES (?, ?, ?)");
+        $query->execute([$v['name'], $coordinates, $v['description']]);
       };
     } catch (\PDOException $e) {
       echo "<h1>500 - Internal Server Error</h1>";
     }
-    
+    $query = null;
     try {
-      $query = $pdo->prepare("SELECT * FROM `planets`");
-      $query->execute();
-      $res = $query->fetchAll();
+      $q = $pdo->prepare("SELECT * FROM `planets`");
+      $q->execute();
+      $res = $q->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($res as $v) {
+        echo "<p>";
+        print "Name: {$v['name']}<br>";
+        echo "Description: {$v['description']}";
+        echo "</p>";
+      }
     } catch (\PDOException $e) {
       echo "<h1>500 - Internal Server Error</h1>";
     }
 
     $query = null;
     $pdo = null;
-    
   ?>
   
   <script src="/assets/js/navbar.js" type="application/javascript"></script>
