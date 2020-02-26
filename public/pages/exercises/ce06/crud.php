@@ -27,7 +27,7 @@
     } catch (\PDOException $e) {
       echo "<h1>500 - Internal Server Error</h1>";
     }
-    $query = null;
+    
     try {
       $q = $pdo->prepare("SELECT * FROM `planets`");
       $q->execute();
