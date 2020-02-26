@@ -29,9 +29,9 @@
     }
     
     try {
-      $q = $pdo->prepare("SELECT * FROM `planets`");
-      $q->execute();
-      $res = $q->fetchAll(PDO::FETCH_ASSOC);
+      $query = $pdo->prepare("SELECT * FROM `planets`");
+      $query->execute();
+      $res = $query->fetchAll(PDO::FETCH_ASSOC);
       foreach ($res as $v) {
         echo "<p>";
         print "Name: {$v['name']}<br>";
