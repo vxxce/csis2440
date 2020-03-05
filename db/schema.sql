@@ -22,6 +22,10 @@ CREATE TABLE `planets` (
   `y_coord` int(11) unsigned NOT NULL,
   `z_coord` int(11) unsigned NOT NULL,
   `description` varchar(1000) NOT NULL,
-  `faction` varchar(20) NOT NULL DEFAULT 'Free Worlds',
+  `faction` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+
+-- randomize faction
+
+UPDATE planets SET faction=ELT(FLOOR(RAND() * 5) + 1, 'alliance', 'free worlds', 'rebels', 'pirates', 'imperial');
