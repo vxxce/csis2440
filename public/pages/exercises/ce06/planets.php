@@ -87,5 +87,3 @@ array("name" => "Whitefall",
 "z" => 718,
 "description"=>"Whitefall is the fourth moon of Athens, the ninth planet orbiting the star Georgia. A large percentage of the world is owned by a woman named Patience. Whitefall is said to not be civilization &apos;in the strictest sense.&apos;")
 );
-
-?>
