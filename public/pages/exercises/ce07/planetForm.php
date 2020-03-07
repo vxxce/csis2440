@@ -31,7 +31,7 @@ $getAllPlanets = function ($pdo) {
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
   </head>
   <body> 
-    <?php include_once "../../headerNav.php"; ?>
+    <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php"; ?>
     <main>
       <?php 
       include_once "currentPlanets.php"; 

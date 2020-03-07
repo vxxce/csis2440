@@ -11,7 +11,7 @@
 </head>
 
 <?php
-require "../../headerNav.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php";
 require_once "planets.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/../private/conn.php"; // store db credentials outside web root
 $pdo = new PDO($dsn, $sec_un, $sec_pw);

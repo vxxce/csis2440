@@ -15,7 +15,7 @@
   </style>
 </head>
 <body>
-  <?php require("../../../pages/headerNav.php"); ?>
+  <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php"; ?>
   <img src="/assets/imgs/mysqlAdminGui.png" alt="Screenshot of Sequel Pro" />
   <script src="/assets/js/navbar.js" type="application/javascript"></script>
 </body>

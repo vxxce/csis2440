@@ -33,7 +33,7 @@ array_pop($classInfo);
 </head>
 
 <body>
-  <?php require("../../headerNav.php"); ?>
+  <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php"; ?>
   <main>
     <h2>Character Creator</h2>
     <div class="hr"></div>

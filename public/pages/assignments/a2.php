@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <?php require("../headerNav.php"); ?>
+  <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php"; ?>
   <main>
     <h2>A2</h2>
     <div class='hr'></div>

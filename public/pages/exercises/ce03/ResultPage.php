@@ -16,7 +16,7 @@ $arrival = $_POST['arrival'];
 </head>
 
 <body>
-  <?php require("../../headerNav.php"); ?>
+  <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php"; ?>
   <main>
     <?php
     echo "<h2>Your voyage on the <em>" . $ships[$ship]['name'] . "</em></h2>";

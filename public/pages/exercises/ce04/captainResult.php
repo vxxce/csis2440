@@ -59,7 +59,7 @@ for ($i = 0; $i < 5; $i++) {
 </head>
 
 <body>
-  <?php require("../../headerNav.php"); ?>
+  <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php"; ?>
   <main>
     <h2>Captain Generator</h2>
     <div class='hr'></div>
