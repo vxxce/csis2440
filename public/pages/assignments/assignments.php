@@ -16,7 +16,7 @@
     <div class='hr'></div>
     <div class="directory">
       <div class="dirButton"><a href="/pages/assignments/phpPage/characterCreator.php">PHP Page</a></div>
-      <div class="dirButton"><a href="/pages/assignments/a2.php">A-2</a></div>
+      <div class="dirButton"><a href="/pages/assignments/mysqlForm/form.php">MySQL Form</a></div>
       <div class="dirButton"><a href="/pages/assignments/a3.php">A-3</a></div>
     </div>
   </main>
