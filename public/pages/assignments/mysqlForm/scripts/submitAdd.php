@@ -38,11 +38,12 @@
       }
     }
     $_POST["errors"] = $errors;
+    header($errorHeader);
   } else {
     try {
       // If everything valid, prepare statement and attempt to insert into db
       $query = $pdo->prepare("INSERT INTO players (fname, lname, birthdate, email, `password`) values (?, ?, ?, ?, ?)");
-      $success = $query->execute([
+      $query->execute([
         strtolower($_POST["fname"]),
         strtolower($_POST["lname"]),
         $_POST["birthdate"],
@@ -50,10 +51,8 @@
         // Use password + email as salt, then hash.
         hash("ripemd256", $_POST["password"] . $_POST["email"])
       ]);
-      if ($success) {
-        print "success!";
-      }
     } catch (\Exception $e) {
-      die;
+      die('Error');
     }
+    print "You successfully updated " . $_POST["fname"] . " " . $_POST["lname"];
   }

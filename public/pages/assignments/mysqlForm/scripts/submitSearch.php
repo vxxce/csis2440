@@ -13,13 +13,15 @@ if (empty($_POST["fname"]) && empty($_POST["lname"])) $errors["missingData"][] =
 
 // If any validation errors, compose header string with error info
 if (array_sum(array_map("count", $errors))) {
-  $errorHeader = "Location: ../add.php?errors=true";
+  $errorHeader = "Location: ../search.php?errors=true";
   foreach ($errors as $errorType => $e) {
     if ($e) {
       $errorHeader .= "&$errorType=" . implode(",", $e);
     }
   }
   $_POST["errors"] = $errors;
+  header($errorHeader);
+  print_r($errors);
 } else {
   try {
     // If at least one field, make  queries conditional on which fields were completed
@@ -38,10 +40,19 @@ if (array_sum(array_map("count", $errors))) {
     };
     // fetch results
     $res = $query->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($res as $key => $value) {
-      print $value["id"] . ", " . $value["fname"] . ", " . $value["lname"] . "<br>";
-    }
   } catch (\Exception $e) {
-    print($e);
-  }
+    die('Error');
+  };
+
+// Print table of results, if any.
+print "<h2>Results</h2>";
+if (!count($res)) {
+  print "No results :(";
+} else {
+  print "<table><thead><tr><th>ID</th><th>First Name</th><th>Last Name</th></tr></thead>";
+  print "<tbody>";
+  foreach ($res as $key => $value)
+    print "<tr><td>" . $value["id"] . "</td><td>" . ucfirst($value["fname"]) . "</td><td>" . ucfirst($value["lname"]) . "</td></tr>";
+  };
+  print "</tbody></table>";
 }

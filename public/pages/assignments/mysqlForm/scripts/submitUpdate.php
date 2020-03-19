@@ -19,13 +19,14 @@ $errors = [
 
   // If any validation errors, compose header string with error info
   if (array_sum(array_map("count", $errors))) {
-    $errorHeader = "Location: ../add.php?errors=true";
+    $errorHeader = "Location: ../update.php?errors=true";
     foreach ($errors as $errorType => $e) {
       if (count($e)) {
         $errorHeader .= "&$errorType=" . implode(",", $e);
       }
     }
     $_POST["errors"] = $errors;
+    header($errorHeader);
   } else {
     try {
       // If everything valid, prepare statement and attempt to update
@@ -36,7 +37,7 @@ $errors = [
         $_POST["email"],
         hash("ripemd256", $_POST["password"] . $_POST["email"])
       ]);
-      if ($query->rowCount()) print "success!";
+      if ($query->rowCount()) print "You successfully updated " . $_POST["fname"] . " " . $_POST["lname"];
     } catch (\Exception $e) {
       die;
     }
