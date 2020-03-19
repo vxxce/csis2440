@@ -1,14 +1,30 @@
 :root {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  background-color: #2e2e2e;
+  color: #e7e7e7;
 }
 
-body * {
-  font-size: 2rem;
+main {
+  padding: 0.5rem;
 }
 
-input[type="submit"] {
-  font-size:1.5rem;
+.form-submit {
+  display: block;
+  font-size: 1rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: #93bee5;
+  color: #2e2e2e;
+  padding: 0.15rem 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.field {
+  margin: 0.4rem;
 }
 
 .query-toggle {
@@ -18,19 +34,24 @@ input[type="submit"] {
   text-transform: uppercase;
   padding: 0.3rem 0.6rem;
   margin: 0.3rem 0.5rem;
+  color: #e7e7e7;
+  border: none;
+  text-transform: uppercase;
 }
 
 .query-toggle:hover {
-  color: #00f;
-  border-bottom: 0.5rem solid #00f;
+  color: #93bee5;
+  border-bottom: 0.25rem solid #93bee5;
 }
 
 .inactive {
-  border-top: none; border-right: none; border-left: none;
-  border-bottom: 0.5rem solid #fff;
+  border-bottom: 0.25rem solid rgba(0, 0, 0, 0);
 }
 
 .active {
-  border-top: none; border-right: none; border-left: none;
-  border-bottom: 0.5rem solid #00f;
+  border-bottom: 0.25rem solid #93bee5;
+}
+
+table, tr, td, th {
+padding: 0.25rem;
 }
