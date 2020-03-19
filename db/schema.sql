@@ -35,6 +35,7 @@ CREATE TABLE `players` (
   `birthdate` date NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` longtext NOT NULL,
+  `updated` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
