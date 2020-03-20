@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
 </head>
 
-<body> 
+<body>
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php"; ?>
   <main>
     <h2>Shop</h2>

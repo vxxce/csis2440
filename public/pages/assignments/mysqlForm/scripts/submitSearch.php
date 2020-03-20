@@ -44,15 +44,15 @@ if (array_sum(array_map("count", $errors))) {
     die('Error');
   };
 
-// Print table of results, if any.
-print "<h2>Results</h2>";
-if (!count($res)) {
-  print "No results :(";
-} else {
-  print "<table><thead><tr><th>ID</th><th>First Name</th><th>Last Name</th></tr></thead>";
-  print "<tbody>";
-  foreach ($res as $key => $value)
-    print "<tr><td>" . $value["id"] . "</td><td>" . ucfirst($value["fname"]) . "</td><td>" . ucfirst($value["lname"]) . "</td></tr>";
+  // Print table of results, if any.
+  print "<h2>Results</h2>";
+  if (!count($res)) {
+    print "No results :(";
+  } else {
+    print "<table><thead><tr><th>ID</th><th>First Name</th><th>Last Name</th></tr></thead>";
+    print "<tbody>";
+    foreach ($res as $key => $value)
+      print "<tr><td>" . $value["id"] . "</td><td>" . ucfirst($value["fname"]) . "</td><td>" . ucfirst($value["lname"]) . "</td></tr>";
   };
   print "</tbody></table>";
 }

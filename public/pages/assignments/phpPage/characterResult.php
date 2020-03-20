@@ -13,12 +13,16 @@ $charImgPath = "/assets/imgs/characters/" . array_reduce([$e_race, $e_class, $e_
 // Read from local files RaceInfo.txt and ClassInfo.text. Clean up the raw text a bit and 
 // make arrays with race/class name as key and relevant captured portion of file as value.
 $raceInfo = file_get_contents("RaceInfo.txt");
-$raceInfo = array_combine(["human", "elf", "dwarf", "halfling", "toss"]
-                          , explode("}", preg_replace('/{/', '', preg_replace('/[\n\r]/', ' ', $raceInfo))));
+$raceInfo = array_combine(
+  ["human", "elf", "dwarf", "halfling", "toss"],
+  explode("}", preg_replace('/{/', '', preg_replace('/[\n\r]/', ' ', $raceInfo)))
+);
 array_pop($raceInfo);
 $classInfo = file_get_contents("ClassInfo.txt");
-$classInfo = array_combine(["fighter", "cleric", "thief", "magic-User", "toss"]
-                          , explode("}", preg_replace('/{/', '', preg_replace('/[\n\r]/', ' ', $classInfo))));
+$classInfo = array_combine(
+  ["fighter", "cleric", "thief", "magic-User", "toss"],
+  explode("}", preg_replace('/{/', '', preg_replace('/[\n\r]/', ' ', $classInfo)))
+);
 array_pop($classInfo);
 
 ?>
@@ -40,17 +44,17 @@ array_pop($classInfo);
     <div id="character-container">
       <header id="character-header">
         <h3 id="character-title">
-        <?php
-        // Kingdom field in form was not required. If no entry, use fallback value
-        if ($e_kingdom) echo $e_characterName . " of " . $e_kingdom;
-        else echo $e_characterName . " of the Unruled";
-        ?>
+          <?php
+          // Kingdom field in form was not required. If no entry, use fallback value
+          if ($e_kingdom) echo $e_characterName . " of " . $e_kingdom;
+          else echo $e_characterName . " of the Unruled";
+          ?>
         </h3>
       </header>
       <figure id="character-figure">
-        <?php 
+        <?php
         // Use dynamically constructed filepath to get correct character image
-        echo "<img id='character-img' src='$charImgPath' alt='Your character' />\n" 
+        echo "<img id='character-img' src='$charImgPath' alt='Your character' />\n"
         ?>
         <figcaption>
           <?php
@@ -62,7 +66,7 @@ array_pop($classInfo);
       </figure>
       <div id="character-stats">
         <ul id="stats-list">
-          <?php 
+          <?php
           // Loop over character ability, assign random scores from 1-10 and render as list items.
           $stats = ["Strength: ", "Constitution: ", "Dexterity: ", "Wisdom: ", "Intelligence: ", "Charisma: "];
           foreach ($stats as $value) {
@@ -76,14 +80,14 @@ array_pop($classInfo);
           <?php
           // Render race description from raceInfo array
           echo "<h4>Race: $e_race</h4>";
-          echo $raceInfo[lcfirst($e_race)];          
+          echo $raceInfo[lcfirst($e_race)];
           ?>
         </section>
         <section id="class-description">
           <?php
           // Render class description from classInfo array
           echo "<h4>Class: $e_class</h4>";
-          echo $classInfo[lcfirst($e_class)];          
+          echo $classInfo[lcfirst($e_class)];
           ?>
         </section>
       </div>

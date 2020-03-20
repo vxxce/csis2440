@@ -2,7 +2,7 @@
 
 switch ($e_action) {
   case "search":
-    print<<<HTML
+    print <<<HTML
     <div id="query-form">
       <form action="planetForm.php" method="POST">
         <h3>$e_action the planets</h3>
@@ -34,7 +34,7 @@ switch ($e_action) {
 HTML;
     break;
   case "add":
-    print<<<HTML
+    print <<<HTML
     <div id="query-form">
       <form action="planetForm.php" method="POST">
         <h3>$e_action a new planet</h3>
@@ -69,7 +69,7 @@ HTML;
 HTML;
     break;
   case "update":
-    print<<<HTML
+    print <<<HTML
     <div id="query-form">
       <form action="planetForm.php" method="POST">
         <h3>Update an existing planet's description</h3>
@@ -88,5 +88,3 @@ HTML;
   default:
     break;
 }
-
-

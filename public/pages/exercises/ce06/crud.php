@@ -19,7 +19,7 @@ $pdo = new PDO($dsn, $sec_un, $sec_pw);
 // Selects all planets from database at call time and prints to document
 $selectAll = function ($pdo) {
   // Use prepared statements to sanitize all queries
-  $query = $pdo->prepare("SELECT * FROM `planets`"); 
+  $query = $pdo->prepare("SELECT * FROM `planets`");
   $query->execute();
   $res = $query->fetchAll(PDO::FETCH_ASSOC);
   return array_reduce($res, function ($acc, $v) {
@@ -48,10 +48,10 @@ $selectAll = function ($pdo) {
     echo "<section id='all-planets'>";
     try {
       echo "<h3>All Planets</h3>"
-         . "<p class='comment'>"
-         . "// Insert all planets from array into db, <br>"
-         . "// select all, and display, "
-         . "</p>";
+        . "<p class='comment'>"
+        . "// Insert all planets from array into db, <br>"
+        . "// select all, and display, "
+        . "</p>";
       print $selectAll($pdo);
     } catch (\PDOException $e) {
       echo "<h1>500 - Internal Server Error</h1>";

@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1rem;
@@ -13,7 +14,8 @@ a {
 a:hover {
   text-decoration: underline;
 }
-input[type="submit"], button {
+input[type="submit"],
+button {
   font-size: 1rem;
   display: block;
   padding: 0.75rem 1rem;
@@ -26,7 +28,6 @@ input[type="submit"], button {
 }
 
 /* header +  nav bar */
-
 
 header#nav {
   background-color: #313638;
@@ -167,7 +168,6 @@ form {
   width: max-content;
 }
 
-
 #results {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -206,7 +206,9 @@ form {
 
 /* Random events */
 
-th, tr, td {
+th,
+tr,
+td {
   padding: 0 2rem 0 0;
   text-align: left;
 }
@@ -219,7 +221,9 @@ form#captainGenerator {
   padding: 1rem;
 }
 
-form#captainGenerator > select, input[type="text"], input[type="number"] {
+form#captainGenerator > select,
+input[type="text"],
+input[type="number"] {
   display: inline-block;
   margin: 0.5rem;
   width: max-content;
@@ -258,7 +262,8 @@ form > div#gender-container {
   width: auto;
 }
 
-select, input {
+select,
+input {
   padding: 0.25rem;
   font-size: 1rem;
 }
@@ -335,7 +340,6 @@ main > div#captain-wrapper {
 /* small screens */
 
 @media (max-width: 900px) {
-
   header#nav {
     display: grid;
     grid-template-rows: auto auto;
@@ -382,7 +386,9 @@ main > div#captain-wrapper {
     font-size: 1rem;
   }
 
-  th, tr, td {
+  th,
+  tr,
+  td {
     padding: 0 1rem 0 0;
     line-height: 1.5rem;
   }
@@ -431,11 +437,9 @@ main > div#captain-wrapper {
   .profile > h3 {
     text-align: center;
   }
-
 }
 
 @media (max-width: 500px) {
-
   main {
     max-width: 100vw;
   }
@@ -445,7 +449,7 @@ main > div#captain-wrapper {
   }
 
   form#captainGenerator label[for="age"] {
-    margin-Left: 0;
+    margin-left: 0;
   }
 
   #gender-container > label#gender {
@@ -453,5 +457,4 @@ main > div#captain-wrapper {
     text-align: left;
     margin-right: 0.3rem;
   }
-
 }

@@ -17,13 +17,13 @@
     <div class='hr'></div>
     <form id="captainGenerator" action="captainResult.php" method="POST">
       <label for="firstname">First Name: </label>
-      <input type="text" name="firstname" id="firstname" required autofocus/>
+      <input type="text" name="firstname" id="firstname" required autofocus />
       <br>
       <label for="lastname">Last Name: </label>
       <input type="text" name="lastname" id="lastname" required />
       <br>
       <label for="age">Age: </label>
-      <input type="number" name="age" id="age" maxlength="3" required/>
+      <input type="number" name="age" id="age" maxlength="3" required />
       <br>
       <div id="gender-container">
         <label for="gender" id="gender">Gender: </label>

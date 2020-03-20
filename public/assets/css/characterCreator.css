@@ -67,7 +67,8 @@ div#character-description {
   grid-row: 3;
 }
 
-section#race-description, section#race-description > h4 {
+section#race-description,
+section#race-description > h4 {
   margin-top: 0.25rem;
 }
 
@@ -76,24 +77,23 @@ div#character-description section > h4 {
 }
 
 @media (min-width: 500px) {
-  
   div#character-container {
     font-size: 1.25rem;
     line-height: 1.75rem;
     gap: 1.5rem;
     padding: 2rem;
   }
-  
+
   div#character-stats {
     font-size: 1.5rem;
     line-height: 2.5rem;
     align-self: center;
   }
-  
+
   header#character-header > h3 {
     font-size: 1.75rem;
   }
-  
+
   figure#character-figure > img {
     width: 35vw;
   }
@@ -104,7 +104,6 @@ div#character-description section > h4 {
 }
 
 @media (min-width: 900px) {
-  
   div#character-container {
     margin-top: 2rem;
     padding: 2rem;
@@ -113,27 +112,27 @@ div#character-description section > h4 {
     align-items: start;
     gap: 2.25rem;
   }
-  
+
   header#character-header > h3 {
     font-size: 2rem;
   }
-  
+
   figure#character-figure > img {
     border: 0.5rem solid #6e8898;
   }
-  
+
   div#character-stats {
     grid-row: 3;
     grid-column: 1;
     text-align: center;
     align-self: start;
   }
-  
+
   div#character-container > div#character-description h4 {
-    font-size: 2rem;;
+    font-size: 2rem;
     margin: 0;
   }
-  
+
   div#character-description {
     grid-column: 2 / span 2;
     grid-row: 2 / span 2;

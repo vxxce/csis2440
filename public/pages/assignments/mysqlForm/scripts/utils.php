@@ -21,7 +21,7 @@ $anyInvalidChars = function (array $assocArray, string $regEx) {
 };
 
 // Check length requirements
-$maxLengthViolation = function (string $input, int $maxLength, int $minLength=0) {
+$maxLengthViolation = function (string $input, int $maxLength, int $minLength = 0) {
   return ($input > $maxLength && $input < $minLength);
 };
 
@@ -39,7 +39,7 @@ $formatDate = function (string $date) {
    **/
   $splitDate = preg_split("/[^0-9]/", $date);
   $formattedYMD = [];
-  
+
   foreach ($splitDate as $k => $v) {
     if (intval($v) > 32) {
       $formattedYMD[0] = str_pad($v, 4, "19", STR_PAD_LEFT);
@@ -49,14 +49,14 @@ $formatDate = function (string $date) {
       unset($splitDate[$k]);
     }
   }
-  
+
   if (!$formattedYMD[0]) {
     return;
   } else if ($formattedYMD[0] && $formattedYMD[2]) {
-    $formattedYMD[1] = str_pad($splitDate[array_keys($splitDate)[0]], 2, "0", STR_PAD_LEFT );
+    $formattedYMD[1] = str_pad($splitDate[array_keys($splitDate)[0]], 2, "0", STR_PAD_LEFT);
   } else {
-    $formattedYMD[1] = str_pad($splitDate[array_keys($splitDate)[0]], 2, "0", STR_PAD_LEFT );
-    $formattedYMD[2] = str_pad($splitDate[array_keys($splitDate)[1]], 2, "0", STR_PAD_LEFT );
+    $formattedYMD[1] = str_pad($splitDate[array_keys($splitDate)[0]], 2, "0", STR_PAD_LEFT);
+    $formattedYMD[2] = str_pad($splitDate[array_keys($splitDate)[1]], 2, "0", STR_PAD_LEFT);
   }
   ksort($formattedYMD);
 

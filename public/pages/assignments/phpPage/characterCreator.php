@@ -17,7 +17,7 @@
     <div class="hr"></div>
     <form id="characterForm" action="characterResult.php" method="POST">
       <label for="characterName">Name: </label>
-      <input type="text" name="characterName" id="characterName" required autofocus/>
+      <input type="text" name="characterName" id="characterName" required autofocus />
       <br>
       <label for="race">Race: </label>
       <select name="race" id="race" required>
@@ -38,7 +38,7 @@
       </select>
       <br>
       <label for="age">Age: </label>
-      <input type="number" name="age" id="age" min="1" max="200" required/>
+      <input type="number" name="age" id="age" min="1" max="200" required />
       <br>
       <label for="kingdom">Kingdom: </label>
       <input type="text" name="kingdom" id="kingdom" />
@@ -46,11 +46,11 @@
       <div id="gender-container">
         <label for="gender" id="gender">Gender: </label>
         <div id="male-container">
-          <input type="radio" name="gender" id="genderM" value="male" required/>
+          <input type="radio" name="gender" id="genderM" value="male" required />
           <label for="genderM">Male</label>
         </div>
         <div id="female-container">
-          <input type="radio" name="gender" id="genderF" value="female" required/>
+          <input type="radio" name="gender" id="genderF" value="female" required />
           <label for="genderF">Female</label>
         </div>
       </div>

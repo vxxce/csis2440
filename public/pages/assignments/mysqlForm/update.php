@@ -14,4 +14,3 @@
   <input type="text" name="lname" class="field" required maxlength="20">
   <input type="submit" name="submit" value="UPDATE" class="form-submit">
 </form>
-

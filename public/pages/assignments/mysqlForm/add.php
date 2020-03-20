@@ -19,4 +19,3 @@
   <input type="password" name="password-confirmation" class="field" required>
   <input type="submit" name="submit" value="ADD" class="form-submit">
 </form>
-

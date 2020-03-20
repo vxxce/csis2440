@@ -52,6 +52,9 @@ main {
   border-bottom: 0.25rem solid #93bee5;
 }
 
-table, tr, td, th {
-padding: 0.25rem;
+table,
+tr,
+td,
+th {
+  padding: 0.25rem;
 }
