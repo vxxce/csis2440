@@ -11,9 +11,9 @@ $errors["invalidCharacters"] = $anyInvalidChars($_POST, "/[^a-zA-Z0-9@#%~_\^\*\-
 // Check if at least field has data
 if (empty($_POST["fname"]) && empty($_POST["lname"])) $errors["missingData"][] = "allFieldsEmpty";
 
-// If any validation errors, compose header string with error info
+// If any validation errors, compose header string with error info as params and redirect
 if (array_sum(array_map("count", $errors))) {
-  $errorHeader = "Location: ../search.php?errors=true";
+  $errorHeader = "Location: results.php?errors=true";
   foreach ($errors as $errorType => $e) {
     if ($e) {
       $errorHeader .= "&$errorType=" . implode(",", $e);
@@ -21,10 +21,10 @@ if (array_sum(array_map("count", $errors))) {
   }
   $_POST["errors"] = $errors;
   header($errorHeader);
-  print_r($errors);
 } else {
   try {
-    // If at least one field, make  queries conditional on which fields were completed
+    // If at least one field, make query conditional on which fields were completed and
+    // Use REGEXP to allow partial matches
     if ($_POST["fname"] && $_POST["lname"]) {
       $query = $pdo->prepare("SELECT id, fname, lname from players WHERE fname REGEXP ? and lname REGEXP ? ORDER BY lname ASC, fname ASC");
       $success = $query->execute([
@@ -41,7 +41,7 @@ if (array_sum(array_map("count", $errors))) {
     // fetch results
     $res = $query->fetchAll(PDO::FETCH_ASSOC);
   } catch (\Exception $e) {
-    die('Error');
+    die('Internal Server Error - HTTP 500');
   };
 
   // Print table of results, if any.

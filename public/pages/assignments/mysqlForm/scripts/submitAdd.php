@@ -30,7 +30,7 @@ if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) $errors["invalidFormat"
 // Check that password and password-confirmation match
 if ($_POST["password"] != $_POST["password-confirmation"]) $errors["passwordMismatch"][] = true;
 
-// If any validation errors, compose header string with error info
+// If any validation errors, compose header string with error info as params and redirect
 if (array_sum(array_map("count", $errors))) {
   $errorHeader = "Location: results.php?errors=true";
   foreach ($errors as $errorType => $e) {
@@ -49,11 +49,11 @@ if (array_sum(array_map("count", $errors))) {
       strtolower($_POST["lname"]),
       $_POST["birthdate"],
       $_POST["email"],
-      // Use password + email as salt, then hash.
+      // Concat password with email to use as salt before hashing.
       hash("ripemd256", $_POST["password"] . $_POST["email"])
     ]);
   } catch (\Exception $e) {
-    die('Error');
+    die('Interal Server Error - HTTP 500');
   }
   print "<p>You successfully added " . ucfirst($_POST["fname"]) . " " . ucfirst($_POST["lname"]) . "</p>";
 }
