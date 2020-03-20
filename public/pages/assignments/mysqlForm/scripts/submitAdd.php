@@ -54,5 +54,5 @@
     } catch (\Exception $e) {
       die('Error');
     }
-    print "You successfully updated " . $_POST["fname"] . " " . $_POST["lname"];
+    print "<p>You successfully added " . ucfirst($_POST["fname"]) . " " . ucfirst($_POST["lname"]) . "</p>";
   }
