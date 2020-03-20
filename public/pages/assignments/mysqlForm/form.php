@@ -1,7 +1,11 @@
 <?php
+// Init queryType to "add" if it has not been set otherwise.
 $queryType = (!empty($_POST["queryType"])) ? $_POST["queryType"] : "add";
+// Utility functions for validation, cleaning, formatting, etc
 require_once "scripts/utils.php";
+// Database cononection credentials. (Stored below web root)
 require_once $_SERVER["DOCUMENT_ROOT"] . "/../private/conn.php";
+// make singular db connection object to be used for all queries
 $pdo = new PDO($mysql_dsn, $mysql_un, $mysql_pw);
 ?>
 

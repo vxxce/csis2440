@@ -27,6 +27,7 @@ $pdo = new PDO($mysql_dsn, $mysql_un, $mysql_pw);
     </form>
 
     <?php
+    // Execute script appropriate to query type (add, update, delete)
     switch ($_POST["submit"]) {
       case "ADD":
         require_once "scripts/submitAdd.php";
@@ -43,5 +44,8 @@ $pdo = new PDO($mysql_dsn, $mysql_un, $mysql_pw);
     ?>
   </main>
 </body>
-
+<?php
+// Close connection
+$pdo=null;
+?>
 </html>
