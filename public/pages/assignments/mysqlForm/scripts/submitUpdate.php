@@ -37,7 +37,7 @@ $errors = [
         $_POST["email"],
         hash("ripemd256", $_POST["password"] . $_POST["email"])
       ]);
-      if ($query->rowCount()) print "You successfully updated " . $_POST["fname"] . " " . $_POST["lname"];
+      if ($query->rowCount()) print "<p>You successfully updated " . ucfirst($_POST["fname"]) . " " . ucfirst($_POST["lname"]). "</p>";
     } catch (\Exception $e) {
       die;
     }
