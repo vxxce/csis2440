@@ -2,8 +2,12 @@
 
 /***** VALIDATION ********** */
 
-// Check for empty required fields
 $anyEmpty = function (array $assocArray) {
+  /**
+   * Check for empty required fields
+   * @param Array $assocArray
+   * @return Array Array with which required fields were empty
+   **/
   $emptyFields = [];
   foreach ($assocArray as $k => $v) {
     if (empty($v)) $emptyFields[] = $k;
@@ -11,17 +15,28 @@ $anyEmpty = function (array $assocArray) {
   return $emptyFields;
 };
 
-// Check for invalid characters
-$anyInvalidChars = function (array $assocArray, string $regEx) {
+$anyInvalidChars = function (array $assocArray, string $regExInvalidChars) {
+  /**
+   * Check for invalid characters 
+   * @param Array $assocArray
+   * @param String $regExInvalidCharacters
+   * @return Array Array with which fields contained invalid characters.
+   **/
   $invalidFields = [];
   foreach ($assocArray as $k => $v) {
-    if (preg_match($regEx, $v) === 1) $invalidFields[] = $k;
+    if (preg_match($regExInvalidChars, $v) === 1) $invalidFields[] = $k;
   }
   return $invalidFields;
 };
 
-// Check length requirements
 $maxLengthViolation = function (string $input, int $maxLength, int $minLength = 0) {
+  /**
+   * Check length requirements
+   * @param String $input
+   * @param Integer $maxLength
+   * @param Integer $minLength
+   * @return Boolean True if length conditions met, false otherwise.
+   **/
   return ($input > $maxLength && $input < $minLength);
 };
 
