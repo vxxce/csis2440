@@ -1,6 +1,6 @@
 <?php
 
-// Init collection of errors
+// Init empty collection of errorType => [errors]
 $errors = [
   "emptyFields" => [],
   "maxLengthViolation" => [],
@@ -13,14 +13,15 @@ $errors = [
 $errors["emptyFields"] = $anyEmpty($_POST);
 
 // Check if any invalid characters
-$errors["invalidCharacters"] = $anyInvalidChars($_POST, "/[^a-zA-Z0-9@#%~_\^\*\-\.\?\!\/\\\]/");
+$errors["invalidCharacters"] = $anyInvalidChars($_POST, "/[^a-zA-Z0-9@#%~_\^\*\-\.\?\!\/]/");
 
 // Check maxLength violations
 if ($maxLengthViolation($_POST["fname"], 20, 0)) $errors["maxLengthViolation"][] = "fname";
 if ($maxLengthViolation($_POST["lname"], 20, 0)) $errors["maxLengthViolation"][] = "lname";
 
 // Format posted birthdate as YYYY-MM-DD. Browsers supporting HTML5 date input will do this for us,
-// but if not, try to make sense of possible input. If input ambiguous (01/02/05), add to error array.
+// but if not, try to make sense of possible inputs. If input intrinsically ambiguous (01/02/05), add to error array.
+// i.e. '1.23.1999' -> '1999-01-23'
 $_POST["birthdate"] = $formatDate($_POST["birthdate"]) or $errors["invalidFormat"][] = "birthdate";
 
 // Check for valid email format.
@@ -31,7 +32,7 @@ if ($_POST["password"] != $_POST["password-confirmation"]) $errors["passwordMism
 
 // If any validation errors, compose header string with error info
 if (array_sum(array_map("count", $errors))) {
-  $errorHeader = "Location: ../add.php?errors=true";
+  $errorHeader = "Location: results.php?errors=true";
   foreach ($errors as $errorType => $e) {
     if (count($e)) {
       $errorHeader .= "&$errorType=" . implode(",", $e);
