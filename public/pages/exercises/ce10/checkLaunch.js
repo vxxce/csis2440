@@ -41,5 +41,5 @@ const status = () => {
     ? errorSpans[2].textContent = "No Code entered"
     : errorSpans[2].textContent = ""
 
-  if (!Object.values(errors).includes(true)) launch(code.value)
+  if (!Object.values(errors).includes(true)) launch(code.value.toUpperCase())
   }
