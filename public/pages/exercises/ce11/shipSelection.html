@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ship Information Sheet</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="ShipClass.js" type="text/javascript"></script>
+  <script src="shipInfo.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div>
+    <select id="shipsoftheline" onchange="getShip(this.value)">
+      <option value="">--</option>
+    </select>
+  </div>
+  <div id="display"></div>
+  <script src="populateShipSelect.js"></script>
+  <script src="shipDisplay.js"></script>
+</body>
+
+</html>
