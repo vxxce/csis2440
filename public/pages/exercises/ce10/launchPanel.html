@@ -1,30 +1,43 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <title>Launch Panel</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="launchPanel.css">
 </head>
 
 <body>
-  <div>Set all the ship settings correctly and you can launch</div>
+  <em>Set all the ship settings correctly and you can launch.</em>
+  <p>
   <label for="ec">Engine Coolant: </label>
-  <input type="radio" value="on" checked="" id="ecOn" name="ec">
-  <label>On: </label>
+  <input type="radio" value="on" id="ecOn" name="ec">
+  <label>On</label>
   <input type="radio" value="off" id="ecOff" name="ec">
-  <label for="">Off: </label>
+  <label for="">Off</label>
+  <span class="error" id="coolant-error"></span>
+</p>
+<p>
+  <label for="burn">Fuel burn-time in launch: </label>
   <br>
-  <label for="burn">Fuel burn time in launch(1-100%)</label>
-  <input type="number" name="burn" id="burn">
-  <br>
+  <label for="burn">0%</label>
+  <input type="range" name="burn" id="burn" min="0" max="100" step="5">
+  <label for="burn">100%</label>
+  <span class="error" id="burn-error"></span>
+</p>
+<p>
   <label for="code">Code: </label>
-  <input type="text" name="code" id="code">Code
-  <button id="launch" name="launch" onclick="return takeOff()">Launch</button>
+  <input type="text" name="code" id="code">
+  <span class="error" id="code-error"></span>
+  </p>
+  <p>
+  <button id="launch" name="launch" onclick="status()">Launch</button>
+  </p>
   <div>
-    <ul id="status">
-
-    </ul>
+    <p id="status"></p>
   </div>
+  <script src="checkLaunch.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,9 @@
+.error {
+  color: #d03737;
+  margin-left: 1rem;
+  font-style: italic;
+}
+
+body {
+  padding: 1rem;
+}
