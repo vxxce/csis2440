@@ -4,29 +4,27 @@
   <title>Launch Panel</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <script>
-
-  </script>
 </head>
 
 <body>
   <div>Set all the ship settings correctly and you can launch</div>
-
-  <input type="radio" value="On" checked="" id="ECOn" name="EC">
-  <input type="radio" value="Off" id="ECOff" name="EC">Engine Coolant
+  <label for="ec">Engine Coolant: </label>
+  <input type="radio" value="on" checked="" id="ecOn" name="ec">
+  <label>On: </label>
+  <input type="radio" value="off" id="ecOff" name="ec">
+  <label for="">Off: </label>
   <br>
-  <input type="number" name="Burn" id="Burn">Fuel Burn Time In launch(1-100%)
+  <label for="burn">Fuel burn time in launch(1-100%)</label>
+  <input type="number" name="burn" id="burn">
   <br>
-  <input type="text" name="Code" id="Code">Code
-  <button id="Launch" name="Launch" onclick="return TakeOff();">Launch</button>
+  <label for="code">Code: </label>
+  <input type="text" name="code" id="code">Code
+  <button id="launch" name="launch" onclick="return takeOff()">Launch</button>
   <div>
     <ul id="status">
 
     </ul>
   </div>
-
-
 </body>
 
 </html>
