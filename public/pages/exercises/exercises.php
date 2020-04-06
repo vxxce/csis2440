@@ -25,7 +25,7 @@
       <div class="dirButton"><a href="#">Session & Login</a></div>
       <div class="dirButton"><a href="#">JS Page</a></div>
       <div class="dirButton"><a href="#">JS Control</a></div>
-      <div class="dirButton"><a href="#">JS Objects</a></div>
+      <div class="dirButton"><a href="/pages/exercises/ce11/shipSelection.html">JS Objects</a></div>
       <div class="dirButton"><a href="#">Validation</a></div>
       <div class="dirButton"><a href="#">AJAX</a></div>
       <div class="dirButton"><a href="#">Shopping Cart</a></div>
