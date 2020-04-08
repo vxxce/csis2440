@@ -1,11 +1,4 @@
 class Ship {
-  name
-  speed
-  hardPoints
-  cargo
-  cost
-  image
-  armor
 
   constructor(n, s, h, ca, co, i) {
     this.name = n
@@ -21,7 +14,7 @@ class Ship {
     divtag.innerHTML = ""
     var displayString = "<table><tr><td>" + this.name + "</td></tr>"
     displayString += "<tr><td>Speed</td><td>" + this.speed + "</td></tr>"
-    displayString += "<tr><td>Weapoon Hard Points</td><td>" + this.hardPoints + "</td></tr>"
+    displayString += "<tr><td>Weapon Hard Points</td><td>" + this.hardPoints + "</td></tr>"
     displayString += "<tr><td>Cargo Space in Tonnes</td><td>" + this.cargo + "</td></tr>"
     displayString += "<tr><td>Cost in Intergalactic Credits</td><td>" + this.cost + "</td></tr>"
     displayString += "<tr><td>Armor</td><td>" + this.armor + "</td></tr>"
