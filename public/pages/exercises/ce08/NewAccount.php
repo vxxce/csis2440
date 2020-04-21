@@ -19,7 +19,8 @@ if (isset($_SESSION['email'])) header("Location: Dashboard.php");
             // TODO: Sanitize input
 
 
-            require_once 'DataBaseConnection.php';
+            require_once $_SERVER["DOCUMENT_ROOT"] . "/../private/conn.php";
+            $pdo = new PDO($ce08_dsn, $ce08_un, $ce08_pw) or die("Could not connect");
             $name = $_POST['name'];
             $email = $_POST['email'];
             $pass = $_POST['confirm-password'];
