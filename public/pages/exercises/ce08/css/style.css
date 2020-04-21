@@ -5,3 +5,7 @@ ul, ol, li {
 .nav-item {
     display: inline;
 }
+
+#newAccount {
+    margin-right: 2rem;
+}

@@ -18,6 +18,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -28,7 +29,10 @@
         <br>
         <label for="pass">Password: </label>
         <input id="pass" name="pass" type="password">
-        <input type="submit" name="submit">
+        <br>
+        <br>
+        <a id="newAccount" href="NewAccount.php">Create Account</a>
+        <input type="submit" name="submit" value="LOGIN">
     </form>
 </body>
 </html>
