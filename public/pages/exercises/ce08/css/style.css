@@ -1,0 +1,7 @@
+ul, ol, li {
+    list-style: none;
+}
+
+.nav-item {
+    display: inline;
+}
