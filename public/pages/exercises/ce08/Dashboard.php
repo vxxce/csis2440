@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 if (!isset($_SESSION['email'])) header("Location: Login.php");
@@ -22,16 +23,16 @@ $cunning = $_SESSION['cunning'];
 </head>
 
 <body>
-<nav>
-    <ul>
-        <li class="nav-item">Hello <?=$_SESSION['name']?>!</li>
-        <li class="nav-item">
-            <form class="nav-item" action="Logout.php">
-                <input type="submit" value="LOGOUT" />
-            </form>
-        </li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li class="nav-item">Hello <?=$_SESSION['name']?>!</li>
+            <li class="nav-item">
+                <form class="nav-item" action="Logout.php">
+                    <input type="submit" value="LOGOUT" />
+                </form>
+            </li>
+        </ul>
+    </nav>
     <ul>
         <li>Name: <?=$name?></li>
         <li>Email: <?=$email?></li>
