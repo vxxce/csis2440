@@ -131,6 +131,7 @@ nav button:hover {
   flex-wrap: nowrap;
   justify-content: stretch;
   align-items: baseline;
+  height: 1.75rem;
 }
 
 .stats > span {
