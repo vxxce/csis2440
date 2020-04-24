@@ -15,52 +15,54 @@
   --form-group-margin: 0.3rem;
 }
 
-/* resets */
+/* universal resets */
 * { margin: 0; padding: 0; }
 ul, ol, li { list-style: none; }
 
+main {
+  padding: 2rem;
+}
 
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);  
+  transform: translate(-50%,-50%);
 }
 
 form.true {
-  align-items: center;
   display: flex;
   flex-direction: column;
-  width: 30rem;
   align-items: flex-end;
+  width: 30rem;
+  padding: 2rem;
   border: 2px solid black;
   border-radius: 0.6rem;
-  padding: 2rem;
 }
 
 .form-header {
-  text-transform: uppercase;
   margin: 0.15rem 0.2rem 1rem 0.2rem;
+  text-transform: uppercase;
 }
 
 .form-group {
+  display: inline-block;
   margin: var(--form-group-margin);
   width: 100%;
   text-align: right;
-  display: inline-block;
 }
 
 input {
   height: 2rem;
   width: 20rem;
+  padding: var(--input-padding);
   font-size: 1rem;
   border-radius: 0.3rem;
-  background-color: var(--action-space);
   border-bottom: 2px solid var(--neutral-dark);
   border-top: 2px solid transparent;
   border-right: 2px solid transparent;
   border-left: 2px solid transparent;
-  padding: var(--input-padding);
+  background-color: var(--action-space);
 }
 
 input:focus {
@@ -72,10 +74,10 @@ label {
 }
 
 .submit {
-  width: min-content;
   justify-self: end;
-  border-radius: 2rem;
+  width: min-content;
   padding: 0.5rem 1rem;
+  border-radius: 2rem;
   border: none;
   background-color: var(--submit-primary);
   color: white;
@@ -83,42 +85,95 @@ label {
 }
 
 .submit:hover {
-  background-color: var(--submit-hover);
   cursor: pointer;
+  background-color: var(--submit-hover);
 }
 
 .error {
+  height: 1.15rem;
+  padding: 0.30rem;
   font-size: 0.9rem;
   font-style: italic;
   color: var(--alert);
-  padding: 0.30rem;
-  height: 1.15rem;
 }
 
 .nav-item {
   display: inline;
 }
 
+nav > ul {
+  text-align: right;
+  font-size: 2rem;
+  font-weight: 700;
+  border-bottom: 2px solid black;
+  padding: 1rem;
+}
+
+nav button {
+  border: none;
+  background-color: none;
+  font-size: 1rem;
+  color: var(--submit-primary);
+}
+
+nav button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: var(--submit-hover)
+}
+
+#stats-list {
+  padding: 1rem 0;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  align-items: baseline;
+}
+
+.stats > span {
+  max-width: min-content;
+  font-weight: 700;
+}
+
+.stats > span:first-child {
+  justify-self: flex-start;
+}
+
+.stats > span:nth-child(3) {
+  justify-self: flex-end;
+}
+
+.trail {
+  display: inline-block;
+  flex-shrink: 1;
+  width: 100%;
+  margin: 0 0.25rem;
+  border-bottom-style: dotted;
+}
+
+
 @media screen and (max-width: 600px) {
 
   form {
-    max-width: 70vw;
+      max-width: 70vw;
   }
 
   form > div {
-    width: 100%;
-    padding: 0 0.45rem;
+      width: 100%;
+      padding: 0 0.45rem;
   }
-  
+
   label {
-    text-align: left;
-    display: block;
-    width: 100%;
-    padding: 0.4rem 0;
+      display: block;
+      width: 100%;
+      padding: 0.4rem 0;
+      text-align: left;
   }
 
   input {
-    width: 100%;
+      width: 100%;
   }
-
 }
