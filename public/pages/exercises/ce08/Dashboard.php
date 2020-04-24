@@ -17,30 +17,30 @@ $cunning = $_SESSION['cunning'];
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li class="nav-item">Hello <?=$_SESSION['name']?>!</li>
-            <li class="nav-item">
-                <form class="nav-item" action="Logout.php">
-                    <input type="submit" value="LOGOUT" />
-                </form>
-            </li>
-        </ul>
-    </nav>
+  <nav>
     <ul>
-        <li>Name: <?=$name?></li>
-        <li>Email: <?=$email?></li>
-        <li>Command: <?=$command?></li>
-        <li>Combat: <?=$combat?></li>
-        <li>Commerce: <?=$commerce?></li>
-        <li>Cunning: <?=$cunning?></li>
+      <li class="nav-item">Hello <?= $_SESSION['name'] ?>!</li>
+      <li class="nav-item">
+        <form class="nav-item" action="Logout.php">
+          <button type="submit">LOGOUT</button>
+        </form>
+      </li>
     </ul>
+  </nav>
+  <ul>
+    <li>Name: <?= $name ?></li>
+    <li>Email: <?= $email ?></li>
+    <li>Command: <?= $command ?></li>
+    <li>Combat: <?= $combat ?></li>
+    <li>Commerce: <?= $commerce ?></li>
+    <li>Cunning: <?= $cunning ?></li>
+  </ul>
 </body>
 
 </html>

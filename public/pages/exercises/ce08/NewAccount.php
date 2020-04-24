@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+print_r($_SESSION);
 if (isset($_SESSION['email'])) header("Location: Dashboard.php");
 ?>
 
@@ -27,8 +27,7 @@ if (isset($_SESSION['email'])) header("Location: Dashboard.php");
     $pdo = new PDO($ce08_dsn, $ce08_un, $ce08_pw) or die("Could not connect");
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $pass = $_POST['pass'];
-    $confirm = $_POST['pass'];
+    $pass = $_POST['confirm'];
     $hash = password_hash($pass, PASSWORD_DEFAULT);
     // Insert into DB
     $query = $pdo->prepare(
@@ -43,7 +42,6 @@ if (isset($_SESSION['email'])) header("Location: Dashboard.php");
   } else {
     // No new account submission yet, show form.
     print <<<HTML
-
       <form action="NewAccount.php" method="POST" class="modal true">
         <h2 class="form-header">Register</h1>
         <div id="name-group" class="form-group">
@@ -65,9 +63,9 @@ if (isset($_SESSION['email'])) header("Location: Dashboard.php");
           <input type="password" name="confirm" id="confirm" required>
         </div>
         <p class="error"></p>
-        <button class="submit" id="submit" name="submit" onclick="return isValid();">SUBMIT</button>
+        <button class="submit" name="submit" id="submit" onclick="return isValid();">SUBMIT</button>
       </form>
-      <script src="validateRegistration.js"></script>
+      <script src="js/validateRegistration.js"></script>
   </body>
 </html>
 HTML;
