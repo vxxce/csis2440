@@ -8,23 +8,22 @@ $res = $prep->fetch(PDO::FETCH_ASSOC);
 $pdo = null;
 $prep = null;
 if (isset($res["email"])) {
-    if (password_verify($_POST["pass"], $res["pass"])) {
-        foreach ($res as $k => $v) $_SESSION[$k] = htmlentities($v);
-        header("Location: Dashboard.php");
+  if (password_verify($_POST["pass"], $res["pass"])) {
+    foreach ($res as $k => $v) $_SESSION[$k] = htmlentities($v);
+    header("Location: Dashboard.php");
+  } else {
+    // User exists but password is incorrect
+    $_SESSION["loginError"] = "Password was incorrect.";
+    if (isset($_SESSION['failedAttempts'])) {
+      $_SESSION['failedAttempts']++;
+      if ($_SESSION['failedAttempts'] > 3) { // or some number
+        // TODO: Time penalty
+      }
     } else {
-        // User exists but password is incorrect
-        $_SESSION["loginError"] = "Password was incorrect.";
-        if (isset($_SESSION['failedAttempts'])) {
-            $_SESSION['failedAttempts']++;
-            if ($_SESSION['failedAttempts'] > 3 ) { // or some number
-                // TODO: Time penalty
-            }
-        } else {
-            $_SESSION['failedAttempts'] = 0;
-        }
+      $_SESSION['failedAttempts'] = 0;
     }
+  }
 } else {
-    // User does not exist
-    $_SESSION['loginError'] = "That user does not exist.";
+  // User does not exist
+  $_SESSION['loginError'] = "That user does not exist.";
 }
-
