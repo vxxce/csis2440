@@ -21,7 +21,7 @@ const isValid = () => {
     if (!meetsPasswordRequirements(confirm.value, /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)) {
         errors.confirm.push("Password must have 8+ characters including one numeric, one uppercase, and one special character.")
     }
-    if (Object.values(errors).flat().length) return true
+    if (!Object.values(errors).reduce((a, c) => a + c.length, 0)) return true
     else [name, email, confirm].forEach(el => {
             (errors[el.id].length)
                 ? el.style.boxShadow = "rgb(255, 0, 0) 0px 0px 3px 2px"
