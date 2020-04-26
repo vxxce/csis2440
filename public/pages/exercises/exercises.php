@@ -22,11 +22,11 @@
       <div class="dirButton"><a href="/pages/exercises/ce05/screenshot.php">Workbench Setup</a></div>
       <div class="dirButton"><a href="/pages/exercises/ce06/crud.php">Database CRUD</a></div>
       <div class="dirButton"><a href="/pages/exercises/ce07/planetForm.php">Forms and Database</a></div>
-      <div class="dirButton"><a href="#">Session & Login</a></div>
-      <div class="dirButton"><a href="#">JS Page</a></div>
+      <div class="dirButton"><a href="/pages/exercises/ce08/Login.php">Session & Login</a></div>
+      <div class="dirButton"><a href="/pages/exercises/ce09/Login.php">JS Page</a></div>
       <div class="dirButton"><a href="/pages/exercises/ce10/launchPanel.html">JS Control</a></div>
       <div class="dirButton"><a href="/pages/exercises/ce11/shipSelection.html">JS Objects</a></div>
-      <div class="dirButton"><a href="#">Validation</a></div>
+      <div class="dirButton"><a href="/pages/exercises/ce12/Login.php">Validation</a></div>
       <div class="dirButton"><a href="#">AJAX</a></div>
       <div class="dirButton"><a href="#">Shopping Cart</a></div>
     </div>
