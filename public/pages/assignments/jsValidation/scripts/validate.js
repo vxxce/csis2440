@@ -2,7 +2,7 @@
 const isAlpha = input => input.match(/^[a-zA-Z]+$/)
 const isFilled = input => input != ""
 const isValidPhone = input => Boolean(input.replace(/[\(\)-\.\s]/g, "").match(/[0-9]{10}/))
-const isValidEmail = input => Boolean(input.match(/[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*/))
+const isValidEmail = input => Boolean(input.match(/[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+/))
 const passwordsMatch = (password, confirm) => password == confirm
 const isValidLength = (input, min, max) => input.length >= min && input.length <= max
 
