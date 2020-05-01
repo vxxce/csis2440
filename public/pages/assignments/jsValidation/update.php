@@ -21,5 +21,5 @@
     <input type="text" id="lname" name="lname" class="field">
     <div id="lnameError" class="error"></div>
   </div>
-  <input type="submit" name="submit" value="update" class="form-submit" onclick="return isValidUpdate()">
+  <input type="submit" name="submit" value="UPDATE" class="form-submit" onclick="return isValidUpdate()">
 </form>

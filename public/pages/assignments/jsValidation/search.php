@@ -10,5 +10,5 @@
     <input type="text" id="lname" name="lname" class="field">
     <div id="namesError" class="error"></div>
   </div>
-  <input type="submit" name="submit" value="search" class="form-submit" onclick="return isValidSearch()">
+  <input type="submit" name="submit" value="SEARCH" class="form-submit" onclick="return isValidSearch()">
 </form>

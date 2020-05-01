@@ -30,5 +30,5 @@
     <input type="password" id="confirm" name="confirm" class="field" required>
     <div id="confirmError" class="error"></div>
   </div>
-  <input type="submit" name="submit" value="add" onclick="return isValidAdd()">
+  <input type="submit" name="submit" value="ADD" onclick="return isValidAdd()">
 </form>
