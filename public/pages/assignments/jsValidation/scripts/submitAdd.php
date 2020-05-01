@@ -41,6 +41,7 @@ if (array_sum(array_map("count", $errors))) {
   }
   $_POST["errors"] = $errors;
   header($errorHeader);
+  exit();
 } else {
   try {
     // If everything valid, prepare statement and attempt to insert into db
@@ -51,7 +52,7 @@ if (array_sum(array_map("count", $errors))) {
       $phone,
       $_POST["email"],
       // Concat password with email to use as salt before hashing.
-      hash("ripemd256", $_POST["password"] . $_POST["email"])
+      password_hash($_POST["password"], PASSWORD_DEFAULT)
     ]);
   } catch (\Exception $e) {
     die('Interal Server Error - HTTP 500');

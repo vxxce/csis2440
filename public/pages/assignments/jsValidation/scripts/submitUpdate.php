@@ -31,18 +31,17 @@ if (array_sum(array_map("count", $errors))) {
 } else {
   try {
     // If everything valid, prepare statement and attempt to update
-    $query = $pdo->prepare("UPDATE players SET fname=?, lname=? WHERE email=? AND `password`=?");
-    $success = $query->execute([
-      strtolower($_POST["fname"]),
-      strtolower($_POST["lname"]),
-      $_POST["email"],
-      hash("ripemd256", $_POST["password"] . $_POST["email"])
-    ]);
-    if (!$success) print "bad query :(";
+    $query = $pdo->prepare("SELECT `password` from players where email=?");
+    $query->execute([$_POST['email']]);
+    $truePass = $query->fetch(PDO::FETCH_ASSOC)['password'];
+    if (password_verify($_POST['password'], $truePass)) {
+      $query = $pdo->prepare("UPDATE players SET fname=?, lname=? WHERE email=?");
+      $query->execute([strtolower($_POST["fname"]), strtolower($_POST["lname"]), $_POST["email"]]);
+      if ($query->rowCount()) print "<p>You successfully updated " . ucfirst($_POST["fname"]) . " " . ucfirst($_POST["lname"]) . "</p>";
+    } else {
+      print "<p>Bad credentials :(</p>";
+    } 
   } catch (\Exception $e) {
     die('Internal Server Error - HTTP 500');
   }
-  $query->rowCount()
-    ? print "<p>You successfully updated " . ucfirst($_POST["fname"]) . " " . ucfirst($_POST["lname"]) . "</p>"
-    : print "<p>bad query :(</p>";
 }
