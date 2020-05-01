@@ -16,7 +16,7 @@ button {
   font-size: 2rem;
 }
 
-button:hover {
+button:hover, button.active {
   border-bottom: 0.2rem solid #0011fb;
 }
 
