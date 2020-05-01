@@ -1,9 +1,9 @@
 <?php
 // Set default query type to add if no selection yet.
-if (isset($_GET['errors'])) $submitType = $_GET['submitType'];
-else if (isset($_POST['submit'])) $submitType = $_POST['submit'];
+if (isset($_GET['errors'])) $submitType = htmlentities($_GET['submitType']);
+else if (isset($_POST['submit'])) $submitType = htmlentities($_POST['submit']);
 else $submitType = "add";
-$queryType = (!empty($_POST["queryType"])) ? $_POST["queryType"] : "add";
+$queryType = (!empty($_POST["queryType"])) ? htmlentities($_POST["queryType"]) : "add";
 require_once "scripts/utils.php";
 // Connect to db
 require_once $_SERVER["DOCUMENT_ROOT"] . "/../private/conn.php";
