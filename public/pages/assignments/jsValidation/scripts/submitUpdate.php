@@ -39,10 +39,13 @@ if (array_sum(array_map("count", $errors))) {
       hash("ripemd256", $_POST["password"] . $_POST["email"])
     ]);
     if (!$success) {
-      header("Location: form.php?submitType=update&badCredentials=true");
+      header("Location: form.php?submitType=update&badQuery=true");
     }
   } catch (\Exception $e) {
     die('Internal Server Error - HTTP 500');
   }
-  if ($query->rowCount()) print "<p>You successfully updated " . ucfirst($_POST["fname"]) . " " . ucfirst($_POST["lname"]) . "</p>";
+  $query->rowCount()
+    ? print "<p>You successfully updated " . ucfirst($_POST["fname"]) . " " . ucfirst($_POST["lname"]) . "</p>"
+    : header("Location: form.php?errors=true&submitType=update&badQuery=true");
+
 }
