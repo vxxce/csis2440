@@ -1,6 +1,8 @@
 <?php
+
+
 // Init queryType to "add" if it has not been set otherwise.
-$queryType = (!empty($_POST["queryType"])) ? $_POST["queryType"] : "add";
+$queryType = (!empty($_POST["queryType"])) ? htmlentities($_POST["queryType"]) : "add";
 // Utility functions for validation, cleaning, formatting, etc
 require_once "scripts/utils.php";
 // Database cononection credentials. (Stored below web root)
@@ -22,12 +24,15 @@ $pdo = new PDO($mysql_dsn, $mysql_un, $mysql_pw);
 <body>
   <main>
     <form action="form.php" method="post">
-      <input type="submit" name="queryType" class="query-toggle <?= $active("add", $queryType) ?>" value="add">
-      <input type="submit" name="queryType" class="query-toggle <?= $active("update", $queryType) ?>" value="update">
-      <input type="submit" name="queryType" class="query-toggle <?= $active("search", $queryType) ?>" value="search">
+      <button type="submit" name="queryType" class="query-toggle <?= $active("add", $queryType) ?>" value="add">ADD</button>
+      <button type="submit" name="queryType" class="query-toggle <?= $active("update", $queryType) ?>" value="update">UPDATE</button>
+      <button type="submit" name="queryType" class="query-toggle <?= $active("search", $queryType) ?>" value="search">SEARCH</button>
     </form>
     <?php
 
+    if (isset($_GET['errors'])) {
+      print_r($_GET);
+    };
     // Show appropriate form for adding, searching, or updating
     switch ($queryType) {
       case "add":
@@ -44,6 +49,7 @@ $pdo = new PDO($mysql_dsn, $mysql_un, $mysql_pw);
     }
     ?>
   </main>
+  <script src="scripts/validate.js"></script>
 </body>
 
 </html>

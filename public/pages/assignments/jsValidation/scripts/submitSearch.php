@@ -9,7 +9,7 @@ if (empty($_POST["fname"]) && empty($_POST["lname"])) $errors["missingData"][] =
 
 // If any validation errors, compose header string with error info as params and redirect
 if (array_sum(array_map("count", $errors))) {
-  $errorHeader = "Location: results.php?submitType=search&errors=true";
+  $errorHeader = "Location: form.php?submitType=search&errors=true";
   foreach ($errors as $errorType => $e) {
     if ($e) {
       $errorHeader .= "&$errorType=" . implode(",", $e);

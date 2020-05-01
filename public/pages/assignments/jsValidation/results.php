@@ -24,9 +24,9 @@ $pdo = new PDO($mysql_dsn, $mysql_un, $mysql_pw);
 <body>
   <main>
     <form action="form.php" method="POST">
-      <input type="submit" name="queryType" class="query-toggle <?= $active("add", $queryType) ?>" value="add">
-      <input type="submit" name="queryType" class="query-toggle <?= $active("update", $queryType) ?>" value="update">
-      <input type="submit" name="queryType" class="query-toggle <?= $active("search", $queryType) ?>" value="search">
+      <button type="submit" name="queryType" class="query-toggle <?= $active("add", $queryType) ?>" value="add">ADD</button>
+      <button type="submit" name="queryType" class="query-toggle <?= $active("update", $queryType) ?>" value="update">UPDATE</button>
+      <button type="submit" name="queryType" class="query-toggle <?= $active("search", $queryType) ?>" value="search">SEARCH</button>  
     </form>
 
     <?php

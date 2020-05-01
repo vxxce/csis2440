@@ -24,7 +24,8 @@ if ($maxLengthViolation($_POST["lname"], 20, 0)) $errors["maxLengthViolation"][]
 if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) $errors["invalidFormat"][] = "email";
 
 // Check for valid phone format.
-if (preg_match("/[^0-9]/", $_POST['phone']) === 1) $errors["invalidFormat"][] = "phone";
+$phone = str_replace(["(", " ", ")", "-", "."], "", $_POST['phone']);
+if ($phone.preg_match("/[^0-9]/", $_POST['phone']) === 1) $errors["invalidFormat"][] = "phone";
 
 
 // Check that password and confirmation match
@@ -32,7 +33,7 @@ if ($_POST["password"] != $_POST["confirm"]) $errors["passwordMismatch"][] = tru
 
 // If any validation errors, compose header string with error info as params and redirect
 if (array_sum(array_map("count", $errors))) {
-  $errorHeader = "Location: results.php?submitType=add&errors=true";
+  $errorHeader = "Location: form.php?submitType=add&errors=true";
   foreach ($errors as $errorType => $e) {
     if (count($e)) {
       $errorHeader .= "&$errorType=" . implode(",", $e);
@@ -47,7 +48,7 @@ if (array_sum(array_map("count", $errors))) {
     $query->execute([
       strtolower($_POST["fname"]),
       strtolower($_POST["lname"]),
-      $_POST["phone"],
+      $phone,
       $_POST["email"],
       // Concat password with email to use as salt before hashing.
       hash("ripemd256", $_POST["password"] . $_POST["email"])

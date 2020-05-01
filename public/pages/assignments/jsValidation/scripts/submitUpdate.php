@@ -20,7 +20,7 @@ if ($maxLengthViolation($_POST["lname"], 20, 0)) $errors["maxLengthViolation"][]
 
 // If any validation errors, compose header string with error info in params and redirect
 if (array_sum(array_map("count", $errors))) {
-  $errorHeader = "Location: results.php?submitType=update&errors=true";
+  $errorHeader = "Location: form.php?submitType=update&errors=true";
   foreach ($errors as $errorType => $e) {
     if (count($e)) {
       $errorHeader .= "&$errorType=" . implode(",", $e);
@@ -38,6 +38,9 @@ if (array_sum(array_map("count", $errors))) {
       $_POST["email"],
       hash("ripemd256", $_POST["password"] . $_POST["email"])
     ]);
+    if (!$success) {
+      header("Location: form.php?submitType=update&badCredentials=true");
+    }
   } catch (\Exception $e) {
     die('Internal Server Error - HTTP 500');
   }
