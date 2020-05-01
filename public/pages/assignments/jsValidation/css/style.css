@@ -27,3 +27,14 @@ button:hover, button.active {
   color: #EF6464;
   padding: 0.5rem;
 }
+
+table {
+  border-collapse: collapse;
+}
+td {
+  padding: 0.25rem 1rem;
+}
+
+th {
+  border-bottom: 0.2rem solid black;
+}
