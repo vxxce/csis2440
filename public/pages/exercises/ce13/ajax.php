@@ -35,14 +35,13 @@
       that your browser's Javascript runtime engine uses to listen for events, like you clicking a button. Incredible!
     </p>
     <p>
-      Try entering the number 1000000 and then immediately entering 1 and clicking the button again. If the (probably truncated)
-      response is successful, you'll see how Javascript throws your second request into the Queue. In a queue, it's first-in, first-out
-      so your annoying request for 1000000 divs needs to finish (successfully or not!) before that second event can come to fruition. Nice!
-    </p>
-    <p>
       Oh, and check out <a href="displayResults.js">the script</a> this page uses to see a modern way to do what XMLHttpRequest is doing here: the Fetch API! (feat Async/Await).
       Toggle this discreet toggler &rarr;<input type="radio" name="fetchToggle" id="fetchToggle">&larr; to try the page using Fetch! It will... look the same, admittedly, but I'll
       fix the button so you can be confident you're fetching.
+    </p>
+    <p>
+      Try entering the number 1000000 and then immediately entering 1 and clicking the button again. Toggle the toggler and try it again.
+      Did you notice anything different?
     </p>
     <hr>
     <label for="number">How many divs?</label>
