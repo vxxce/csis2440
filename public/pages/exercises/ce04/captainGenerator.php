@@ -18,24 +18,17 @@
     <form id="captainGenerator" action="captainResult.php" method="POST">
       <label for="firstname">First Name: </label>
       <input type="text" name="firstname" id="firstname" required autofocus />
-      <br>
       <label for="lastname">Last Name: </label>
       <input type="text" name="lastname" id="lastname" required />
-      <br>
       <label for="age">Age: </label>
       <input type="number" name="age" id="age" maxlength="3" required />
-      <br>
-      <div id="gender-container">
         <label for="gender" id="gender">Gender: </label>
-        <div id="male-container">
+        <div>
           <input type="radio" name="gender" id="genderM" value="male" />
           <label for="genderM">Male</label>
-        </div>
-        <div id="female-container">
           <input type="radio" name="gender" id="genderF" value="female" />
           <label for="genderF">Female</label>
         </div>
-      </div>
       <button value="create">CREATE</button>
     </form>
   </main>

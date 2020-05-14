@@ -12,8 +12,6 @@
 <body>
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php"; ?>
   <main>
-    <h2>Assignments</h2>
-    <div class='hr'></div>
     <div class="directory">
       <div class="dirButton"><a href="/pages/assignments/phpPage/characterCreator.php">PHP Page</a></div>
       <div class="dirButton"><a href="/pages/assignments/mysqlForm/form.php">MySQL Form</a></div>

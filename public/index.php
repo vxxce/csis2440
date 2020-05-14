@@ -29,8 +29,7 @@
 <body>
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php"; ?>
   <main class="home">
-    <h2>About</h2>
-    <div class='hr'></div>
+
     <div id="about">
       <section>
         <p>

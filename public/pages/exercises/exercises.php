@@ -12,13 +12,11 @@
 <body>
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php"; ?>
   <main>
-    <h2>Exercises</h2>
-    <div class='hr'></div>
     <div class="directory">
       <div class="dirButton"><a href="/pages/exercises/ce02/randomEvents.php">Random Events</a></div>
       <div class="dirButton"><a href="/pages/exercises/ce03/FormPage.php">Using Forms</a></div>
       <div class="dirButton"><a href="/pages/exercises/ce04/captainGenerator.php">Reading Files</a></div>
-      <div class="dirButton"><a href="/pages/exercises/ce07/planetForm.php">Forms and Database</a></div>
+      <!-- <div class="dirButton"><a href="/pages/exercises/ce07/planetForm.php">Forms and Database</a></div> -->
       <div class="dirButton"><a href="/pages/exercises/ce08/Login.php">Session & Login</a></div>
       <div class="dirButton"><a href="/pages/exercises/ce10/launchPanel.html">JS Control</a></div>
       <div class="dirButton"><a href="/pages/exercises/ce13/ajax.php">AJAX</a></div>

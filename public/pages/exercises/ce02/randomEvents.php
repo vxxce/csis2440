@@ -38,14 +38,17 @@
       }
       echo "</tbody></table>";
       echo $score >= 1
-        ? "<p><strong>Player wins with the final score of: $score</strong></p>"
-        : "<p><strong>Player loses with final score of: $score</strong></p>";
+      ? "<p><strong>Player wins with the final score of: $score</strong></p>"
+      : "<p><strong>Player loses with final score of: $score</strong></p>";
       echo "<input id='reload' type='submit' value='PLAY AGAIN'/ >";
       echo "</div>";
-
+      
       // Chinese Zodiac
+      echo "</section>";
+      
       echo "<h2>Chinese Zodiac</h2>";
       echo "<div class='hr'></div>";
+      echo "<section>";
       $year = date("Y");
       echo "<p>It is the presently the year of the: <em>";
       switch ($year % 12) {
@@ -90,11 +93,8 @@
       }
       echo "</em></p>";
       ?>
-    </section>
-    <section>
       <label for='year'>Try some other year: </label>
       <input name='year' id='year' type='text' placeholder='Enter a year' max-length='4' />
-      <p>
         <button id='checkYear' type='submit'>Check</button>
         <p id='answer'></p>
     </section>
