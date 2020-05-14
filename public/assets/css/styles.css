@@ -80,10 +80,15 @@ a {
   padding: 0.2em;
 }
 
-a:hover {
+nav a:hover {
   transition: all ease-in-out 100ms;
   color: #4f6858;
   border-bottom: 0.15em solid #4f6858;
+}
+
+.logo:hover {
+  color: #1e1c1a;
+  border: none;
 }
 input[type="submit"],
 button {
@@ -256,9 +261,16 @@ main ul.no-list {
 
 form {
   width: 30rem;
+  max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+select {
+  align-self: center;
+}
+
+
 
 label {
   text-align: right;
@@ -336,8 +348,6 @@ input[type="number"] {
 
 form#captainGenerator > input[type="number"] {
   width: 15%;
-}
-form#captainGenerator > label[for="age"] {
 }
 
 form#captainGenerator > button {
@@ -438,6 +448,8 @@ main > div#captain-wrapper {
 .transmissions hr {
   width: 90%;
 }
+
+
 
 /* small screens */
 
