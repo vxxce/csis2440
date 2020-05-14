@@ -9,20 +9,20 @@
   <title>AJAX</title>
   <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
   <style>
-    p {
-      max-width: 650px;
-    }
-    main {
-      display: block;
-      width: max-content;
-      margin: 0 auto;
-    }
+ p {
+   max-width: 650px;
+ }
+
+ .wrap {
+   margin: 2rem;
+ }
   </style>
 </head>
 
 <body>
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php"; ?>
   <main>
+    <div class='wrap'>
     <p>
       Enter a large number and I'll spend some time building an unwieldy string of randomly-colored divs in a
       willfully inefficient manner. When I'm done, I'll send it back--if I can! Notice that even if you
@@ -48,6 +48,7 @@
     <input type="number" name="num" id="num" max="10000001" min="0">
     <button type="button" style="display: inline-block; margin: 1rem;">Get em</button>
     <div id="results"></div>
+    <div>
   </main>
   <script src="displayResults.js" type="application/javascript"></script>
   <script src="/assets/js/navbar.js" type="application/javascript"></script>

@@ -13,9 +13,10 @@
   <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/pages/headerNav.php"; ?>
   <main>
     <div class="directory">
-      <div class="dirButton"><a href="/pages/assignments/phpPage/characterCreator.php">PHP Page</a></div>
+      brb
+      <!-- <div class="dirButton"><a href="/pages/assignments/phpPage/characterCreator.php">PHP Page</a></div>
       <div class="dirButton"><a href="/pages/assignments/mysqlForm/form.php">MySQL Form</a></div>
-      <div class="dirButton"><a href="/pages/assignments/jsValidation/form.php">JS Validation</a></div>
+      <div class="dirButton"><a href="/pages/assignments/jsValidation/form.php">JS Validation</a></div> -->
     </div>
   </main>
   <script src="/assets/js/subDir.js" type="application/javascript"></script>
