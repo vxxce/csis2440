@@ -172,7 +172,19 @@ main ul.no-list {
 /* distance calculator */
 
 form {
-  width: max-content;
+  width: 30rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+label {
+  text-align: right;
+}
+
+.form-submit {
+  grid-column: 2;
+  width: min-content;
+  justify-self: right;
 }
 
 #results {
@@ -189,6 +201,7 @@ form {
 #results h3 {
   padding: 1rem 0rem;
   margin: 0;
+  border: none;
 }
 
 .container {

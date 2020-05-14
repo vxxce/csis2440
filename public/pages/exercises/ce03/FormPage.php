@@ -33,7 +33,6 @@ $shipsArray = ["Crate", "Lightening", "Starliner", "VD Tug", "Biel-Corp II", "VD
           }
           ?>
         </select>
-        <br />
         <label for="planet1">Departure planet:</label>
         <select id="planet1" name="departure">
           <option value="--">--</option>
@@ -43,8 +42,7 @@ $shipsArray = ["Crate", "Lightening", "Starliner", "VD Tug", "Biel-Corp II", "VD
           }
           ?>
         </select>
-        <br />
-        <lable for="planet2">Destination planet:</lable>
+        <label for="planet2">Destination planet:</label>
         <select id="planet2" name="arrival">
           <option value="--">--</option>
           <?php
@@ -53,7 +51,7 @@ $shipsArray = ["Crate", "Lightening", "Starliner", "VD Tug", "Biel-Corp II", "VD
           }
           ?>
         </select>
-        <input type="submit" name="Create" value="CALCULATE">
+        <input class="form-submit" type="submit" name="Create" value="CALCULATE">
       </form>
     </section>
   </main>
