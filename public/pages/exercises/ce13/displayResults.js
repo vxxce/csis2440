@@ -38,6 +38,12 @@ const getEmFetch = async () => {                 //
 // attach listeners
 let fetching = false
 let url = ""
+button.addEventListener('click', () => {
+  button.style.backgroundColor = "#374b3e"
+  setTimeout(() => {
+    button.style.backgroundColor = "#4f6858"
+  }, 100)
+})
 button.addEventListener('click', getEmXML, false)
 fetchToggle.addEventListener('click', () => {
   button.removeEventListener( 'click'
